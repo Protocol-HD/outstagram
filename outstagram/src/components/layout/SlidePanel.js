@@ -5,23 +5,21 @@ function SlidePanel() {
 		<div id="eskimo-panels">
 			<aside id="eskimo-panel" className="eskimo-panel">
 				<div className="eskimo-panel-inner">
-					{/*<!-- CLOSE SLIDE PANEL BUTTON -->*/}
+					{/* <!-- CLOSE SLIDE PANEL BUTTON --> */}
 					<a href="#" className="eskimo-panel-close"><i className="fa fa-times"></i></a>
-					{/*<!-- AUTHOR BOX -->*/}
+					{/* <!-- AUTHOR BOX --> */}
 					<div className="eskimo-author-box eskimo-widget">
 						<div className="eskimo-author-img">
 							<img src="images/300x300.png" alt="JOHN DOE" />
 						</div>
 						<h3><span>JOHN DOE</span></h3>
 						<p className="eskimo-author-subtitle">WEB DESIGNER &amp; DEVELOPER</p>
-						<p className="eskimo-author-description">I'm a Web Developer and Designer with a strong passion for
-							UX/UI design. I have experience building websites, web applications, and brand assets. Contact me if
-							you have any questions!</p>
+						<p className="eskimo-author-description">I'm a Web Developer and Designer with a strong passion for UX/UI design. I have experience building websites, web applications, and brand assets. Contact me if you have any questions!</p>
 						<div className="eskimo-author-box-btn">
 							<a className="btn btn-default" href="about.html">CONTACT ME</a>
 						</div>
 					</div>
-					{/*<!-- RECENT POSTS -->*/}
+					{/* <!-- RECENT POSTS --> */}
 					<div className="eskimo-recent-entries eskimo-widget">
 						<h5 className="eskimo-title-with-border"><span>Recent Posts</span></h5>
 						<ul>
@@ -47,33 +45,28 @@ function SlidePanel() {
 							</li>
 						</ul>
 					</div>
-					{/*<!-- CATEGORIES -->*/}
+					{/* <!-- CATEGORIES --> */}
 					<div className="eskimo-categories eskimo-widget">
 						<h5 className="eskimo-title-with-border"><span>Categories</span></h5>
 						<ul>
 							<li>
-								<a href="category.html" title="The best restaurants, cafes, bars and shops in town.">Food &amp;
-									Drink</a> <span className="badge badge-pill badge-default">5</span>
+								<a href="category.html" title="The best restaurants, cafes, bars and shops in town.">Food &amp; Drink</a> <span className="badge badge-pill badge-default">5</span>
 							</li>
 							<li>
-								<a href="category.html" title="An up-to-date, personal urban guide.">Lifestyle</a> <span
-									className="badge badge-pill badge-default">5</span>
+								<a href="category.html" title="An up-to-date, personal urban guide.">Lifestyle</a> <span className="badge badge-pill badge-default">5</span>
 							</li>
 							<li>
-								<a href="category.html" title="Latest technology news and updates.">Technology</a> <span
-									className="badge badge-pill badge-default">4</span>
+								<a href="category.html" title="Latest technology news and updates.">Technology</a> <span className="badge badge-pill badge-default">4</span>
 							</li>
 							<li>
-								<a href="category.html" title="Travel advice, information and inspiration.">Travel</a> <span
-									className="badge badge-pill badge-default">5</span>
+								<a href="category.html" title="Travel advice, information and inspiration.">Travel</a> <span className="badge badge-pill badge-default">5</span>
 							</li>
 							<li>
-								<a href="category.html" title="The latest news about movies and TV shows.">TV &amp; Movies</a>
-								<span className="badge badge-pill badge-default">4</span>
+								<a href="category.html" title="The latest news about movies and TV shows.">TV &amp; Movies</a> <span className="badge badge-pill badge-default">4</span>
 							</li>
 						</ul>
 					</div>
-					{/*<!-- TAGS -->*/}
+					{/* <!-- TAGS --> */}
 					<div className="eskimo-widget">
 						<h5 className="eskimo-title-with-border"><span>Tags</span></h5>
 						<div className="eskimo-tag-cloud">
