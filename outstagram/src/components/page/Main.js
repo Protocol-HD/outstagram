@@ -12,8 +12,6 @@ function Main() {
 			<ReadingPositionIndicator />
 			<SiteWrapper />
 			<GoToTopButton />
-			<SlidePanelOverlay />
-			<SlidePanel />
 			<FullscreenSearch />
 		</>
 	);
