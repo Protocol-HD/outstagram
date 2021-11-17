@@ -30,7 +30,10 @@ function AddPost() {
 			console.log(tags);
 			tags.map((id, tag) => {
 				console.log(id, tag);
-				// return();
+				return (
+					{
+					}
+				);
 			});
 
 			fetch("http://localhost:3005/Post", {
