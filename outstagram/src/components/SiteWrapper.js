@@ -1,6 +1,6 @@
 import React from 'react';
+import Footer from './Footer';
 import MainContainer from './MainContainer';
-import Footer from './layout/Footer';
 
 function SiteWrapper() {
 	return (
