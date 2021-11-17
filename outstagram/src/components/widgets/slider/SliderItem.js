@@ -7,7 +7,7 @@ function SliderItem({postId}) {
     const [slideImageUrl, setSlideImageUrl] = useState("")
 
     useEffect(()=>{
-        fetch(`http://localhost:3010/post/${postId}`)
+        fetch(`http://localhost:3005/post/${postId}`)
 		.then(res=>{
 			return res.json()
 		})
@@ -20,7 +20,7 @@ function SliderItem({postId}) {
     },[])
     
     const callCategoryName = (id) => {
-        fetch(`http://localhost:3010/categories/${id}`)
+        fetch(`http://localhost:3005/categories/${id}`)
 		.then(res=>{
 			return res.json()
 		})

@@ -6,7 +6,7 @@ function Slider() {
 	const [sliders, setSliders] = useState([])
 
 	useEffect(()=>{
-		fetch("http://localhost:3010/Sliders")
+		fetch("http://localhost:3005/Sliders")
 		.then(res=>{
 			return res.json()
 		})
