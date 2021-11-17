@@ -13,15 +13,15 @@ import SlidePanelOverlay from './components/SlidePanelOverlay';
 function App() {
 	return (
 		<div className="App">
-			{/* <ReadingPositionIndicator />
+			<ReadingPositionIndicator />
 			<SiteWrapper />
 			<GoToTopButton />
 			<SlidePanelOverlay />
-			<SlidePanel />g
-			<FullscreenSearch /> */}
-			<AddSns />
+			<SlidePanel />
+			<FullscreenSearch />
+			{/* <AddSns />
 			<AddCategories />
-			<AddPost />
+			<AddPost /> */}
 		</div>
 	);
 }

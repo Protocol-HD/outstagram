@@ -2,6 +2,7 @@ import React from 'react';
 import BlogPosts from './BlogPosts';
 import PageTitle from './PageTitle';
 import Sidebar from './Sidebar';
+import Slider from './Slider';
 import TopIcons from './TopIcons';
 
 function MainContainer() {
@@ -11,6 +12,7 @@ function MainContainer() {
 				<Sidebar />
 				<TopIcons />
 				<div className="clearfix"></div>
+				<Slider />
 				<PageTitle />
 				<BlogPosts />
 				<div className="clearfix"></div>
