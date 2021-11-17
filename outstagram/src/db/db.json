@@ -6,10 +6,10 @@
     ],
     "sns" : [
         { "id" : 1 , "name" : "email" },
-        { "id" : 1 , "name" : "facebook" },
-        { "id" : 1 , "name" : "twitter" },
-        { "id" : 1 , "name" : "linkdin" },
-        { "id" : 1 , "name" : "kakao" }
+        { "id" : 2 , "name" : "facebook" },
+        { "id" : 3 , "name" : "twitter" },
+        { "id" : 4 , "name" : "linkdin" },
+        { "id" : 5 , "name" : "kakao" }
     ],
     "post":{
         "id" : 1,
