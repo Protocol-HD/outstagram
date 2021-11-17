@@ -1,77 +1,439 @@
 {
-    "categories" : [
-        { "id" : 1 , "name" : "lifestyle"},
-        { "id" : 2 , "name" : "game"},
-        { "id" : 3 , "name" : "shopping"}
-    ],
-    "sns" : [
-        { "id" : 1 , "name" : "email" },
-        { "id" : 2 , "name" : "facebook" },
-        { "id" : 3 , "name" : "twitter" },
-        { "id" : 4 , "name" : "linkdin" },
-        { "id" : 5 , "name" : "kakao" }
-    ],
-    "post":{
-        "id" : 1,
-        "postName" : "Post Start 01",
-        "postTitle" : "A SINGLE POST",
-        "categoryId" : 1 , 
-        "created" : "20211117",
-        "updated" : "20211117",
-        "author" : "admin",
-        "view" : 1,
-        "tags" : [
-            {
-                "id" : 1,
-                "tagName" : "sunung"
-            },
-            {
-                "id" : 2,
-                "tagName" : "시급"
-            },
-            {
-                "id" : 3,
-                "tagName" : "깍였어"
-            },
-            {
-                "id" : 4,
-                "tagName" : "밥사줘"
-            }
-        ],
-        "titleImage" : "1.jpg",
-        "images" : [
-            { "id" : 1, "imageUrl" : "1.jpg" },
-            { "id" : 2, "imageUrl" : "2.jpg" },
-            { "id" : 3, "imageUrl" : "3.jpg" },
-            { "id" : 4, "imageUrl" : "4.jpg" },
-            { "id" : 5, "imageUrl" : "5.jpg" }
-        ],
-        "texts" : [
-            { 
-                "id" : 1 , 
-                "contentText" : "Dolore commodo ea excepteur do irure praetermissum aut enim proident aut laboris, an lorem irure irure commodo. Iudicem culpa litteris ad enim eu mandaremus. Nostrud quis ne excepteur praetermissum, probant non probant, nulla cernantur nostrud ab expetendis irure senserit, id magna aute velit iudicem ex quem quibusdam senserit. Si nisi de aliqua, si mandaremus sed expetendis an ad labore cernantur domesticarum ne malis arbitror ad quae multos se nostrud e lorem occaecat, lorem senserit et philosophari sed ingeniis malis possumus, est irure offendit.Tempor cillum nostrud ex sunt expetendis et ipsum quis. Ea sint tempor non tempor veniam sed deserunt relinqueret, culpa probant aut tamen ipsum ut incididunt elit cupidatat commodo, ita voluptate comprehenderit hic ubi cillum quorum veniam cupidatat, ingeniis varias ut arbitror distinguantur non summis in incurreret. Id veniam varias et vidisse. Do fugiat magna in proident. Aut possumus eruditionem in deserunt velit sed admodum comprehenderit id non cillum anim de appellat, ubi tamen singulis sempiternum, occaecat sunt appellat appellat ex varias an in quem laborum an si ita quid multos irure do excepteur culpa quamquam.",
-                "qText" : "Ne aliquip cohaerescant ad dolore offendit ex cillum quae ita ullamco duis arbitror expetendis in dolor an aliquip do summis iis ut quorum reprehenderit, ab quae nostrud efflorescere de sunt do fabulas in ea nulla id quis. Nostrud a mandaremus, qui amet iis multos. O arbitror praesentibus. Varias ubi quo nulla litteris. Anim tempor si aliqua multos. Nescius labore incurreret vidisse.",
-                "subText" : "Nulla nostrud aut irure noster. Tempor consectetur o mentitum ne sed hic sint veniam anim. Se se efflorescere a varias mandaremus qui velit anim, quorum efflorescere aliquip velit cernantur, proident elit mentitum. Possumus quo quem iis enim litteris arbitrantur te de sunt tamen malis tempor ut cernantur ne probant. Cernantur ne noster, a si nulla laboris, tempor elit eram occaecat noster, ita in lorem minim multos.",
-                "galleryText" : "Qui illum fugiat velit laboris. Ad esse irure multos appellat. Ad labore mandaremus. Litteris aute ullamco iis non in coniunctione a iis possumus si admodum e enim nostrud praesentibus. Non aute transferrem te et aute fidelissimae. Mandaremus veniam ab cupidatat exquisitaque, e quae laboris domesticarum, non sint mentitum fabulas de anim proident transferrem, ita aliqua imitarentur in in labore illum eram offendit, nisi fidelissimae possumus noster ullamco se eiusmod multos ex offendit transferrem. Iudicem voluptatibus qui consequat ita litteris culpa arbitror senserit."
-            }
-        ],
-        "snsList" : [ 1,2,3,4 ],
-        "comments" : [
-            { 
-                "id" : 1,
-                "author" : "admin",
-                "text" : "와"
-            },
-            { 
-                "id" : 2,
-                "author" : "admin",
-                "text" : "댓글"
-            },
-            { 
-                "id" : 3,
-                "author" : "admin",
-                "text" : "이다"
-            }
-        ]
+  "categories": [
+    {
+      "id": 1,
+      "name": "lifestyle"
+    },
+    {
+      "id": 2,
+      "name": "game"
+    },
+    {
+      "id": 3,
+      "name": "shopping"
+    },
+    {
+      "name": "asdfwef",
+      "id": 4
     }
+  ],
+  "sns": [
+    {
+      "id": 1,
+      "name": "email"
+    },
+    {
+      "id": 2,
+      "name": "facebook"
+    },
+    {
+      "id": 3,
+      "name": "twitter"
+    },
+    {
+      "id": 4,
+      "name": "linkdin"
+    },
+    {
+      "id": 5,
+      "name": "kakao"
+    },
+    {
+      "name": "asdf",
+      "id": 6
+    },
+    {
+      "name": "test ",
+      "id": 7
+    },
+    {
+      "name": "asdfwe",
+      "id": 8
+    }
+  ],
+  "post": [
+    {
+      "id": 1,
+      "postName": "Post Start 01",
+      "postTitle": "A SINGLE POST",
+      "categoryId": 1,
+      "created": "20211117",
+      "updated": "20211117",
+      "author": "admin",
+      "view": 1,
+      "tags": [
+        {
+          "id": 1,
+          "tagName": "sunung"
+        },
+        {
+          "id": 2,
+          "tagName": "시급"
+        },
+        {
+          "id": 3,
+          "tagName": "깍였어"
+        },
+        {
+          "id": 4,
+          "tagName": "밥사줘"
+        }
+      ],
+      "titleImage": "1.jpg",
+      "images": [
+        {
+          "id": 1,
+          "imageUrl": "1.jpg"
+        },
+        {
+          "id": 2,
+          "imageUrl": "2.jpg"
+        },
+        {
+          "id": 3,
+          "imageUrl": "3.jpg"
+        },
+        {
+          "id": 4,
+          "imageUrl": "4.jpg"
+        },
+        {
+          "id": 5,
+          "imageUrl": "5.jpg"
+        }
+      ],
+      "texts": [
+        {
+          "id": 1,
+          "contentText": "Dolore commodo ea excepteur do irure praetermissum aut enim proident aut laboris, an lorem irure irure commodo. Iudicem culpa litteris ad enim eu mandaremus. Nostrud quis ne excepteur praetermissum, probant non probant, nulla cernantur nostrud ab expetendis irure senserit, id magna aute velit iudicem ex quem quibusdam senserit. Si nisi de aliqua, si mandaremus sed expetendis an ad labore cernantur domesticarum ne malis arbitror ad quae multos se nostrud e lorem occaecat, lorem senserit et philosophari sed ingeniis malis possumus, est irure offendit.Tempor cillum nostrud ex sunt expetendis et ipsum quis. Ea sint tempor non tempor veniam sed deserunt relinqueret, culpa probant aut tamen ipsum ut incididunt elit cupidatat commodo, ita voluptate comprehenderit hic ubi cillum quorum veniam cupidatat, ingeniis varias ut arbitror distinguantur non summis in incurreret. Id veniam varias et vidisse. Do fugiat magna in proident. Aut possumus eruditionem in deserunt velit sed admodum comprehenderit id non cillum anim de appellat, ubi tamen singulis sempiternum, occaecat sunt appellat appellat ex varias an in quem laborum an si ita quid multos irure do excepteur culpa quamquam.",
+          "qText": "Ne aliquip cohaerescant ad dolore offendit ex cillum quae ita ullamco duis arbitror expetendis in dolor an aliquip do summis iis ut quorum reprehenderit, ab quae nostrud efflorescere de sunt do fabulas in ea nulla id quis. Nostrud a mandaremus, qui amet iis multos. O arbitror praesentibus. Varias ubi quo nulla litteris. Anim tempor si aliqua multos. Nescius labore incurreret vidisse.",
+          "subText": "Nulla nostrud aut irure noster. Tempor consectetur o mentitum ne sed hic sint veniam anim. Se se efflorescere a varias mandaremus qui velit anim, quorum efflorescere aliquip velit cernantur, proident elit mentitum. Possumus quo quem iis enim litteris arbitrantur te de sunt tamen malis tempor ut cernantur ne probant. Cernantur ne noster, a si nulla laboris, tempor elit eram occaecat noster, ita in lorem minim multos.",
+          "galleryText": "Qui illum fugiat velit laboris. Ad esse irure multos appellat. Ad labore mandaremus. Litteris aute ullamco iis non in coniunctione a iis possumus si admodum e enim nostrud praesentibus. Non aute transferrem te et aute fidelissimae. Mandaremus veniam ab cupidatat exquisitaque, e quae laboris domesticarum, non sint mentitum fabulas de anim proident transferrem, ita aliqua imitarentur in in labore illum eram offendit, nisi fidelissimae possumus noster ullamco se eiusmod multos ex offendit transferrem. Iudicem voluptatibus qui consequat ita litteris culpa arbitror senserit."
+        }
+      ],
+      "snsList": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "author": "fqwef",
+      "postTitle": "asdf",
+      "categoryId": "asdf",
+      "tags": "xczv",
+      "titleImage": "1234",
+      "images": "qq",
+      "texts": "12345qwef",
+      "snsList": "wasdf",
+      "id": 2
+    },
+    {
+      "author": "asdf",
+      "postTitle": "asdf",
+      "categoryId": "asdf",
+      "tags": "asdf",
+      "titleImage": "asdf",
+      "images": "asdf",
+      "texts": "sadf",
+      "snsList": "sadf",
+      "id": 3
+    },
+    {
+      "author": "1",
+      "postTitle": "2",
+      "categoryId": "3",
+      "tags": "4",
+      "titleImage": "5",
+      "images": "6",
+      "texts": "7",
+      "snsList": "8",
+      "created": "Wed Nov 17 2021 12:34:06 GMT+0900 (한국 표준시)",
+      "id": 4
+    },
+    {
+      "author": "gudehdu10",
+      "postTitle": "이건 제목",
+      "categoryId": "2",
+      "tags": "점심, 저녁, 식사",
+      "titleImage": "Food.jpg",
+      "images": "Food.jpg, 01.jpg, 02.jpg",
+      "texts": "이거슨 내용",
+      "snsList": "1, 2",
+      "created": "Wed Nov 17 2021 12:35:43 GMT+0900 (한국 표준시)",
+      "updated": "Wed Nov 17 2021 12:35:43 GMT+0900 (한국 표준시)",
+      "id": 5
+    },
+    {
+      "author": "ㅁㄴㅇ",
+      "postTitle": "ㄴㅁㅇㄹ",
+      "categoryId": "ㄴㅁㅇㄹ",
+      "tags": "이건 태그 들",
+      "titleImage": "ㅁㄴㄹㅇ",
+      "images": "ㅁㄴㅇㄹ",
+      "texts": "ㅁㄴㅇㄹ",
+      "snsList": "ㄴㅁㅇㄹ",
+      "created": "Wed Nov 17 2021 12:41:34 GMT+0900 (한국 표준시)",
+      "updated": "Wed Nov 17 2021 12:41:34 GMT+0900 (한국 표준시)",
+      "id": 6
+    },
+    {
+      "author": "작성자",
+      "postTitle": "제목",
+      "categoryId": "1",
+      "tags": [
+        "클라우드",
+        "개발자",
+        "풀스택",
+        ""
+      ],
+      "titleImage": "cloud.jpg",
+      "images": [
+        "01.jpg",
+        "02.png",
+        ""
+      ],
+      "texts": [
+        "문단1",
+        "문단2",
+        "문단3",
+        "문단4"
+      ],
+      "snsList": "2",
+      "created": "Wed Nov 17 2021 13:35:40 GMT+0900 (한국 표준시)",
+      "updated": "Wed Nov 17 2021 13:35:40 GMT+0900 (한국 표준시)",
+      "id": 7
+    },
+    {
+      "author": "",
+      "postTitle": "",
+      "categoryId": "",
+      "titleImage": "",
+      "images": [
+        "",
+        "",
+        ""
+      ],
+      "texts": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "snsList": "",
+      "created": "Wed Nov 17 2021 13:42:02 GMT+0900 (한국 표준시)",
+      "updated": "Wed Nov 17 2021 13:42:02 GMT+0900 (한국 표준시)",
+      "id": 8
+    },
+    {
+      "author": "",
+      "postTitle": "",
+      "categoryId": "",
+      "titleImage": "ㅁ ㅁ ㅁ",
+      "images": [
+        "",
+        "",
+        ""
+      ],
+      "texts": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "snsList": "",
+      "created": "Wed Nov 17 2021 13:42:33 GMT+0900 (한국 표준시)",
+      "updated": "Wed Nov 17 2021 13:42:33 GMT+0900 (한국 표준시)",
+      "id": 9
+    },
+    {
+      "author": "",
+      "postTitle": "",
+      "categoryId": "",
+      "titleImage": "",
+      "images": [
+        "",
+        "",
+        ""
+      ],
+      "texts": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "snsList": "",
+      "created": "Wed Nov 17 2021 13:42:50 GMT+0900 (한국 표준시)",
+      "updated": "Wed Nov 17 2021 13:42:50 GMT+0900 (한국 표준시)",
+      "id": 10
+    },
+    {
+      "author": "",
+      "postTitle": "",
+      "categoryId": "",
+      "titleImage": "",
+      "images": [
+        "",
+        "",
+        ""
+      ],
+      "texts": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "snsList": "",
+      "created": "Wed Nov 17 2021 13:43:29 GMT+0900 (한국 표준시)",
+      "updated": "Wed Nov 17 2021 13:43:29 GMT+0900 (한국 표준시)",
+      "id": 11
+    },
+    {
+      "author": "",
+      "postTitle": "",
+      "categoryId": "",
+      "titleImage": "    ",
+      "images": [
+        "",
+        "",
+        ""
+      ],
+      "texts": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "snsList": "",
+      "created": "Wed Nov 17 2021 13:43:40 GMT+0900 (한국 표준시)",
+      "updated": "Wed Nov 17 2021 13:43:40 GMT+0900 (한국 표준시)",
+      "id": 12
+    },
+    {
+      "author": "",
+      "postTitle": "",
+      "categoryId": "",
+      "titleImage": "",
+      "images": [
+        "",
+        "",
+        ""
+      ],
+      "texts": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "snsList": "",
+      "created": "Wed Nov 17 2021 13:44:11 GMT+0900 (한국 표준시)",
+      "updated": "Wed Nov 17 2021 13:44:11 GMT+0900 (한국 표준시)",
+      "id": 13
+    },
+    {
+      "author": "",
+      "postTitle": "",
+      "categoryId": "",
+      "titleImage": "",
+      "images": [
+        "",
+        "",
+        ""
+      ],
+      "texts": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "snsList": "",
+      "created": "Wed Nov 17 2021 13:45:03 GMT+0900 (한국 표준시)",
+      "updated": "Wed Nov 17 2021 13:45:03 GMT+0900 (한국 표준시)",
+      "id": 14
+    },
+    {
+      "author": "",
+      "postTitle": "",
+      "categoryId": "",
+      "titleImage": " #",
+      "images": [
+        "",
+        "",
+        ""
+      ],
+      "texts": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "snsList": "",
+      "created": "Wed Nov 17 2021 13:45:23 GMT+0900 (한국 표준시)",
+      "updated": "Wed Nov 17 2021 13:45:23 GMT+0900 (한국 표준시)",
+      "id": 15
+    },
+    {
+      "author": "",
+      "postTitle": "",
+      "categoryId": "",
+      "titleImage": "",
+      "images": [
+        "",
+        "",
+        ""
+      ],
+      "texts": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "snsList": "",
+      "created": "Wed Nov 17 2021 13:52:25 GMT+0900 (한국 표준시)",
+      "updated": "Wed Nov 17 2021 13:52:25 GMT+0900 (한국 표준시)",
+      "id": 16
+    },
+    {
+      "author": "",
+      "postTitle": "",
+      "categoryId": "",
+      "titleImage": "",
+      "images": [
+        "",
+        "",
+        ""
+      ],
+      "texts": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "snsList": "",
+      "created": "Wed Nov 17 2021 13:55:56 GMT+0900 (한국 표준시)",
+      "updated": "Wed Nov 17 2021 13:55:56 GMT+0900 (한국 표준시)",
+      "id": 17
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "author": "admin",
+      "text": "와",
+      "postId": 1
+    },
+    {
+      "id": 2,
+      "author": "admin",
+      "text": "댓글",
+      "postId": 1
+    },
+    {
+      "id": 3,
+      "author": "admin",
+      "text": "이다",
+      "postId": 1
+    }
+  ]
 }
