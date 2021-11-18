@@ -1,7 +1,6 @@
 import React from 'react';
 import BlogPosts from './BlogPosts';
 import PageTitle from './PageTitle';
-import Sidebar from './Sidebar';
 import Slider from './Slider';
 import TopIcons from './TopIcons';
 
@@ -9,7 +8,6 @@ function MainContainer() {
 	return (
 		<main id="eskimo-main-container">
 			<div className="container">
-				<Sidebar />
 				<TopIcons />
 				<div className="clearfix"></div>
 				<Slider />
@@ -22,3 +20,5 @@ function MainContainer() {
 }
 
 export default MainContainer;
+
+// 사이드바 여기서 뺌

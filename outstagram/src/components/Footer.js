@@ -4,12 +4,14 @@ import FooterWrapper from './FooterWrapper';
 
 function Footer() {
 	return (
-		<footer id="eskimo-footer">
-			<div className="container">
-				<FooterWrapper />
-				<Creadits />
-			</div>
-		</footer>
+		<div id="eskimo-site-wrapper">
+			<footer id="eskimo-footer">
+				<div className="container">
+					<FooterWrapper />
+					<Creadits />
+				</div>
+			</footer>
+		</div>
 	);
 }
 

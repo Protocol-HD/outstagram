@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 
 function Post({ post }) {
 	const [categoryName, setCategoryName] = useState("");
-	const [postImageUrl, setpostImageUrl] = useState("")
+	const [postImageUrl, setpostImageUrl] = useState("");
+	const [more, setMore] = useState(false);
 
 
 	const callCategoryName = (id) => {
@@ -13,6 +14,21 @@ function Post({ post }) {
 			.then(data => {
 				setCategoryName(data.name);
 			})
+	}
+
+	const handleMore = () => {
+		setMore(!more);
+	}
+
+	const viewMore = () => {
+		return (
+			<>
+				<p>{more ? post.text : post.text.substr(0, 300) + "..."}</p>
+				<button type="button" className={more ? "btn btn-secondary mt-3" : "btn btn-primary mt-3"} onClick={handleMore}>
+					{more ? "Hide" : "More"}
+				</button>
+			</> 
+		);
 	}
 
 	useEffect(() => {
@@ -30,7 +46,7 @@ function Post({ post }) {
 					<h3 className="card-title"><a href="single-post.html">{post.postTitle}</a></h3>
 					<div className="card-excerpt">
 						<img src={postImageUrl} />
-						<p>{post.text.substr(0, 300)} ...</p>
+						<p>{post.text.length > 300 ? viewMore() : post.text}</p>
 					</div>
 					<div className="card-horizontal-meta">
 						<div className="eskimo-author-meta">
