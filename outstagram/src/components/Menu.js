@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Menu() {
+function Menu({ mobileMenu }) {
 	return (
-		<nav id="eskimo-main-menu" className="menu-main-menu-container">
+		<nav id="eskimo-main-menu" className="menu-main-menu-container" style={mobileMenu ? { display: 'none' } : { display: 'block' }}>
 			<ul className="eskimo-menu-ul">
 				<li><Link to={"/"}>Home</Link></li>
 				<li><Link to={"/test/"}>Write</Link></li>

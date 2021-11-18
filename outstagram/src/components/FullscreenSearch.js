@@ -1,10 +1,10 @@
 import React from 'react';
 
-function FullscreenSearch() {
+function FullscreenSearch({ search, setSearch }) {
 	return (
-		<div id="eskimo-fullscreen-search">
+		<div id="eskimo-fullscreen-search" style={search ? { display: 'block' } : { display: 'none' }}>
 			<div id="eskimo-fullscreen-search-content">
-				<a href="#" id="eskimo-close-search"><i className="fa fa-times"></i></a>
+				<a onClick={() => setSearch(false)} id="eskimo-close-search"><i className="fa fa-times"></i></a>
 				<form role="search" method="get" action="search.html" className="eskimo-lg-form">
 					<div className="input-group">
 						<input type="text" className="form-control form-control-lg" placeholder="Enter a keyword..." name="s" />

@@ -1,8 +1,8 @@
 import React from 'react';
 
-function MobileMenuButton() {
+function MobileMenuButton({ mobileMenu, setMobileMenu }) {
 	return (
-		<div id="eskimo-menu-toggle">MENU</div>
+		<div id="eskimo-menu-toggle" onClick={() => setMobileMenu(!mobileMenu)}>MENU</div>
 	);
 }
 
