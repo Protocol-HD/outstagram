@@ -14,8 +14,8 @@ function App() {
 
 			<Routes>
 				<Route path="/" element={<Home />} />
-				<Route path="/test/" element={<Test />} />
-				<Route path="/galleries/" element={<Galleries />} />
+				<Route path="/test" element={<Test />} />
+				<Route path="/galleries" element={<Galleries />} />
 			</Routes>
 
 			<GoToTopButton />
