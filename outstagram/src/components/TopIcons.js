@@ -2,6 +2,7 @@ import React from 'react';
 
 function TopIcons() {
 	return (
+		<>
 		<ul className="eskimo-top-icons">
 			{/* <li id="eskimo-panel-icon">
 				<a href="#eskimo-panel" className="eskimo-panel-open"><i className="fa fa-bars"></i></a>
@@ -10,6 +11,8 @@ function TopIcons() {
 				<a id="eskimo-open-search" href="#"><i className="fa fa-search"></i></a>
 			</li>
 		</ul>
+		<div className="clearfix"></div>
+		</>
 	);
 }
 

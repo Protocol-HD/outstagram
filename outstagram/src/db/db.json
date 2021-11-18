@@ -72,10 +72,10 @@
 	"post": [
 		{
 			"id": 1,
-			"postTitle": "A SINGLE POST",
+			"postTitle": "A double POST",
 			"categoryId": 1,
-			"created": "20211117",
-			"updated": "20211117",
+			"created": "20211118",
+			"updated": "20211118",
 			"author": "admin",
 			"view": 1,
 			"tags": [
@@ -129,7 +129,7 @@
 		},
 		{
 			"id": 2,
-			"postTitle": "A SINGLE POST",
+			"postTitle": "Spider",
 			"categoryId": 2,
 			"created": "20211117",
 			"updated": "20211117",
