@@ -17,7 +17,7 @@ function Galleries() {
 	}, []);
 	return (
 		<div id="eskimo-site-wrapper">
-			<div className="container">
+			<div className="container-fluid d-inline-flex" id="photoBoxContainer">
 				<div className="row" id="photoBox">
 					{posts.map(item => (
 						<Gallery key={item.id} Url={item.titleImage} />
