@@ -11,7 +11,7 @@ function MainContainer() {
 				<TopIcons />
 				<div className="clearfix"></div>
 				<Slider />
-				<PageTitle />
+				<PageTitle title = "SNS Contents" />
 				<BlogPosts />
 				<div className="clearfix"></div>
 			</div>

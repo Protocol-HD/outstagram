@@ -2830,7 +2830,6 @@ video {
     width: 61.8%;
     padding: 3rem;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    border-right: none;
     -webkit-transition: border 200ms ease;
     -moz-transition: border 200ms ease;
     -o-transition: border 200ms ease;
@@ -2926,7 +2925,7 @@ video {
 .eskimo_comment_form {
     position: relative;
     display: block;
-}
+}z
 
 .eskimo_commentlist .comment-respond {
     margin: 0px 0px 40px 0px;

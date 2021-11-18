@@ -1,9 +1,9 @@
 import React from 'react';
 
-function PageTitle() {
+function PageTitle({ title }) {
 	return (
 		<div className="eskimo-page-title">
-			<h1 className="no-border">Blog - Full Width</h1>
+			<h1 className="no-border">{title}</h1>
 		</div>
 	);
 }
