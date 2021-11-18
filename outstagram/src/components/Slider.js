@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react';
 import SliderOutstagram from "react-slick";
 import SliderItem from './widgets/slider/SliderItem';
 
-
 function Slider() {
-
 	const [sliders, setSliders] = useState([]);
 
 	const settings = {
@@ -18,10 +16,7 @@ function Slider() {
 		fade: true
 	};
 
-
 	useEffect(() => {
-
-
 		fetch("http://localhost:3005/Sliders")
 			.then(res => {
 				return res.json()
@@ -29,14 +24,10 @@ function Slider() {
 			.then(data => {
 				setSliders(data);
 			});
-
-
 	}, [])
-
-	
 	return (
 		<div className="eskimo-carousel-container">
-			<SliderOutstagram id="eskimo-post-slider" className="eskimo-slider" {...settings} style={{ opacity : 1 }}>
+			<SliderOutstagram id="eskimo-post-slider" className="eskimo-slider" {...settings} style={{ opacity: 1 }}>
 				{
 					sliders.map(item => (
 						<SliderItem

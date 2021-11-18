@@ -7,8 +7,6 @@ import Test from './components/pages/Test';
 import Galleries from './components/pages/Galleries';
 import GoToTopButton from './components/GoToTopButton';
 
-
-
 function App() {
 	return (
 		<BrowserRouter>

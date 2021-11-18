@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
 function SliderItem({ postId }) {
-
 	const [post, setPost] = useState([]);
 	const [categoryName, setCategoryName] = useState("");
 	const [slideImageUrl, setSlideImageUrl] = useState("");
@@ -27,7 +26,6 @@ function SliderItem({ postId }) {
 				setCategoryName(data.name);
 			});
 	}
-
 	return (
 		<div>
 			<a className="eskimo-slider-img" href="single-post.html"></a>
@@ -40,7 +38,7 @@ function SliderItem({ postId }) {
 			<div className="eskimo-slider-desc">
 				<div className="eskimo-slider-desc-inner">
 					<h2 className="card-title">{post.postTitle}</h2>
-					<p>{post.postTitle}</p>
+					<p>{post.text}</p>
 				</div>
 			</div>
 		</div>

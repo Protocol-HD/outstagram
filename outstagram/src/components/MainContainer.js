@@ -11,9 +11,8 @@ function MainContainer() {
 				<div className="container">
 					<TopIcons />
 					<Slider />
-					<PageTitle title = "SNS Contents" />
+					<PageTitle title="SNS Contents" />
 					<BlogPosts />
-					
 				</div>
 			</main>
 		</div>
