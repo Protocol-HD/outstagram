@@ -4066,14 +4066,14 @@ p.form-submit {
     .card-small .card-footer {
         padding: 1.5rem;
     }
-    .eskimo-top-icons {
+    /* .eskimo-top-icons {
         position: relative;
         top: auto;
         right: auto;
         left: auto;
         float: right;
         margin-bottom: 40px;
-        border:none;
+        border:none; */
     }
     .eskimo-top-icons li {
         display: inline-block;
@@ -4098,7 +4098,7 @@ p.form-submit {
         padding: 0 45px;
     }
     #eskimo-gototop {
-        display: none;
+        display: block;
     }
     .eskimo-top-icons li {
         float: right;
