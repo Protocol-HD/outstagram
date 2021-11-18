@@ -14,3 +14,13 @@
 .textCenter {
 	text-align: center;
 }
+
+.gallery {
+	object-fit: cover;
+}
+
+#photoBox div {
+	padding: 0 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
