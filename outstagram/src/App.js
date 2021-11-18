@@ -10,16 +10,16 @@ import GoToTopButton from './components/GoToTopButton';
 function App() {
 	return (
 		<BrowserRouter>
-			<div className="App">
-				<Sidebar />
-				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="/test/" element={<Test />} />
-					<Route path="/galleries/" element={<Galleries />} />
-				</Routes>
-				<GoToTopButton />
-				<Footer />
-			</div>
+			<Sidebar />
+
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/test/" element={<Test />} />
+				<Route path="/galleries/" element={<Galleries />} />
+			</Routes>
+
+			<GoToTopButton />
+			<Footer />
 		</BrowserRouter>
 	);
 }

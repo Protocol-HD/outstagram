@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 
 function AddPost() {
 
@@ -14,19 +14,8 @@ function AddPost() {
 
 	const handelSubmit = (event) => {
 		event.preventDefault();
-		
-		if (refAuthor.current.value !== "" && refPostTitle.current.value !== "" && refTitleImage.current.value !== "" && refText.current.value !== ""
-		) {
-			// const tags = refTags.current.value.split("#" || " #");
-			// console.log(tags);
-			// tags.map((id, tag) => {
-			// 	console.log(id, tag);
-			// 	return (
-			// 		{
-			// 		}
-			// 	);
-			// });
 
+		if (refAuthor.current.value !== "" && refPostTitle.current.value !== "" && refTitleImage.current.value !== "" && refText.current.value !== "") {
 			fetch("http://localhost:3005/Post", {
 				method: "POST",
 				headers: { "content-Type": "application/json" },
