@@ -5,6 +5,7 @@ import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
 import Test from './components/pages/Test';
 import Galleries from './components/pages/Galleries';
+import GoToTopButton from './components/GoToTopButton';
 
 
 
@@ -18,6 +19,7 @@ function App() {
 					<Route path="/test/" element={<Test />} />
 					<Route path="/galleries/" element={<Galleries />} />
 				</Routes>
+				<GoToTopButton />
 				<Footer />
 			</div>
 		</BrowserRouter>
