@@ -90,10 +90,10 @@ function AddPost() {
 				<div className="input-group mb-2">
 					<input type="text" className="form-control" placeholder="Image1s" aria-label="Images" aria-describedby="button-addon2" ref={refImages} />
 				</div>
-				<div className="input-group">
+				<div className="input-group mb-2">
 					<input type="text" className="form-control" placeholder="Text" aria-label="Text" aria-describedby="button-addon2" ref={refText} />
 				</div>
-				<div className="input-group">
+				<div className="input-group mb-5">
 					<input type="text" className="form-control" placeholder="SNS" aria-label="SNS" aria-describedby="button-addon2" ref={refSnsList} />
 				</div>
 				<button type="submit" className="btn btn-primary">Submit</button>

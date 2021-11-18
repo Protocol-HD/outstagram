@@ -14,7 +14,6 @@ function Slider() {
 				setSliders(data);
 			});
 
-
 	}, [])
 	return (
 		<div className="eskimo-carousel-container eskimo-bg-loader">
