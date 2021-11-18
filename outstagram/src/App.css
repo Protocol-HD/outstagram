@@ -1,3 +1,16 @@
 .App {
 	text-align: center;
 }
+
+.soft {
+	transition: 0.3s;
+}
+
+.testBox {
+	max-width: 800px;
+	margin: auto;
+}
+
+.textCenter {
+	text-align: center;
+}

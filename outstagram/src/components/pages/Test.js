@@ -5,11 +5,13 @@ import AddSns from '../AddSns';
 
 function Test() {
 	return (
-		<>
-			<AddSns />
-			<AddCategories />
-			<AddPost />
-		</>
+		<div id="eskimo-site-wrapper">
+			<div className="testBox">
+				<AddSns />
+				<AddCategories />
+				<AddPost />
+			</div>
+		</div>
 	);
 }
 
