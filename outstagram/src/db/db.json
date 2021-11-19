@@ -41,22 +41,67 @@
   ],
   "comments": [
     {
-      "id": 1,
-      "author": "admin",
-      "text": "와",
-      "postId": 1
+      "author": "테스트",
+      "text": "테스트 댓글",
+      "updated": "2021-11-19 16:19:57",
+      "postId": 1,
+      "id": 1
     },
     {
-      "id": 2,
-      "author": "admin",
-      "text": "댓글",
-      "postId": 1
+      "author": "이거도",
+      "text": "테스트",
+      "updated": "2021-11-19 16:20:08",
+      "postId": 1,
+      "id": 2
     },
     {
-      "id": 3,
-      "author": "admin",
-      "text": "이다",
-      "postId": 1
+      "author": "엌ㅋ",
+      "text": "개꿀",
+      "updated": "2021-11-19 16:19:57",
+      "postId": 2,
+      "id": 3
+    },
+    {
+      "author": "ㅁㄴㅇㄹ",
+      "text": "ㅁㄴㅇㄹ",
+      "updated": "2021-11-19 16:20:14",
+      "postId": 1,
+      "id": 4
+    },
+    {
+      "author": "1",
+      "text": "1",
+      "updated": "2021-11-19 16:20:26",
+      "postId": 1,
+      "id": 5
+    },
+    {
+      "author": "2",
+      "text": "2",
+      "updated": "2021-11-19 16:20:28",
+      "postId": 1,
+      "id": 6
+    },
+    {
+      "author": "3",
+      "text": "3",
+      "updated": "2021-11-19 16:20:32",
+      "postId": 1,
+      "id": 7
+    },
+    {
+      "author": "ㅁㄴㅇㄻ",
+      "text": "ㅁㄴㅇㄻㄴㅇㄹ",
+      "updated": "2021-11-19 16:23:05",
+      "postId": 3,
+      "id": 8
+    },
+    {
+      "author": "ㅁㄴㅇㄹ",
+      "text": "ㅁㄴㅇㄹ",
+      "updated": "2021-11-19 16:27:39",
+      "postId": 1,
+      "id": 9
     }
   ],
   "Sliders": [
@@ -72,7 +117,7 @@
   "post": [
     {
       "id": 1,
-      "like": false,
+      "like": true,
       "postTitle": "A double POST",
       "categoryId": 1,
       "created": "20211118",
@@ -130,7 +175,7 @@
     },
     {
       "id": 2,
-      "like": true,
+      "like": false,
       "postTitle": "Spider",
       "categoryId": 2,
       "created": "20211117",
@@ -304,7 +349,7 @@
     },
     {
       "id": 5,
-      "like": false,
+      "like": true,
       "postTitle": "A SINGLE POST",
       "categoryId": 1,
       "created": "20211117",

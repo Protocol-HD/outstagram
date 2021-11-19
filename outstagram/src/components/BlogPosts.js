@@ -4,6 +4,7 @@ import Post from './Post';
 function BlogPosts() {
 	const [posts, setPosts] = useState([]);
 
+
 	useEffect(() => {
 		fetch(`http://localhost:3005/post`)
 			.then(res => {
@@ -15,10 +16,9 @@ function BlogPosts() {
 				setPosts(data);
 			})
 	}, []);
-
 	return (
 		<>
-			{
+			{	
 				posts.map(post => (
 					<Post key={post.id} post={post} />
 				))

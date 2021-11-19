@@ -29,7 +29,8 @@ function AddPost() {
 					text: refText.current.value,
 					snsList: refSnsList.current.value,
 					created: Date(),
-					updated: Date()
+					updated: Date(),
+					like: false
 				})
 			})
 				.then(
