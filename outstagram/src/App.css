@@ -15,8 +15,32 @@
 	text-align: center;
 }
 
+.likeBox {
+	width: auto;
+	display: block;
+	margin-top: 10px;
+}
+
+.like {
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+}
+
+.likeText {
+	width: 100px;
+	display: inline-block;
+	font-size: 1.0rem;
+	font-weight: bold;
+	margin-left: 20px;
+}
+
 .gallery {
 	object-fit: cover;
+}
+
+.pointer {
+	cursor: pointer;
 }
 
 #photoBox div {

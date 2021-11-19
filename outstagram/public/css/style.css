@@ -4225,6 +4225,11 @@ p.form-submit {
     .eskimo-slider-desc-inner {
         padding: 2rem;
     }
+
+	.card-text {
+		display: none;
+	}
+
     .slick-slide .eskimo-slider-desc,
     .slick-slide .eskimo-slider-image-meta {
         -webkit-transform: translate(0px, 0px);

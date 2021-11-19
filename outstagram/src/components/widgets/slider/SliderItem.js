@@ -38,7 +38,7 @@ function SliderItem({ postId }) {
 			<div className="eskimo-slider-desc">
 				<div className="eskimo-slider-desc-inner">
 					<h2 className="card-title">{post.postTitle}</h2>
-					<p>{post.text}</p>
+					<p className="card-text">{post.text}</p>
 				</div>
 			</div>
 		</div>

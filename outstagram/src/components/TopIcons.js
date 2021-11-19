@@ -3,7 +3,7 @@ import React from 'react';
 function TopIcons({ setSearch }) {
 	return (
 		<>
-			<ul className="eskimo-top-icons">
+			<ul className="eskimo-top-icons pointer">
 				{/* <li id="eskimo-panel-icon">
 				<a href="#eskimo-panel" className="eskimo-panel-open"><i className="fa fa-bars"></i></a>
 			</li> */}
