@@ -46,10 +46,22 @@ function Comments({ postId, commentAdd, setCommentAdd }) {
 				<tbody>{comLists}</tbody>
 			</table>
 			<div className="d-flex justify-content-between">
-				<button type="button" className={commentButton ? "btn btn-primary mt-3" : "btn btn-secondary mt-3"} onClick={handleAmount}>{commentButton ? "댓글 더 보기" : "댓글 끝"}</button>
-				<button type="button" className="btn btn-primary mt-3" onClick={() => setAmount(2)} style={
-					amount <= 2 || comment.length <= 2 ? { display: 'none' } : { display: 'block' }
-				}>댓글 접기</button>
+				<button
+					type="button"
+					className={commentButton ? "btn btn-primary mt-3" : "btn btn-secondary mt-3"}
+					onClick={handleAmount}
+				>
+					{commentButton ? "댓글 더 보기" : "댓글 끝"}</button>
+				<button
+					type="button"
+					className="btn btn-primary mt-3"
+					onClick={() => setAmount(2)}
+					style={
+						amount <= 2 || comment.length <= 2 ? { display: 'none' } : { display: 'block' }
+					}
+				>
+					댓글 접기
+				</button>
 			</div>
 		</div>
 
