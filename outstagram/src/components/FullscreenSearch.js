@@ -2,7 +2,7 @@ import React from 'react';
 
 function FullscreenSearch({ search, setSearch }) {
 	return (
-		<div id="eskimo-fullscreen-search" style={search ? { display: 'block' } : { display: 'none' }}>
+		<div id="eskimo-fullscreen-search" className="pointer" style={search ? { display: 'block' } : { display: 'none' }}>
 			<div id="eskimo-fullscreen-search-content">
 				<a onClick={() => setSearch(false)} id="eskimo-close-search"><i className="fa fa-times"></i></a>
 				<form role="search" method="get" action="search.html" className="eskimo-lg-form">
