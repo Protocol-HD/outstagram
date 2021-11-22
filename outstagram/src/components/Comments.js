@@ -15,7 +15,7 @@ function Comments({ postId, commentAdd, setCommentAdd }) {
 			.then(data => {
 				setComment(data);
 				setCommentAdd(false);
-			})
+			});
 	}, [commentAdd]);
 
 	const comLists = comment.map(item => (
@@ -28,6 +28,11 @@ function Comments({ postId, commentAdd, setCommentAdd }) {
 
 	const handleAmount = () => {
 		setAmount(comment.length > amount ? amount + 2 : setCommentButton(false));
+	}
+
+	const handleCloseComment = () => {
+		setAmount(2);
+		setCommentButton(true);
 	}
 
 	if (comment.length < 1) {
@@ -55,7 +60,7 @@ function Comments({ postId, commentAdd, setCommentAdd }) {
 				<button
 					type="button"
 					className="btn btn-primary mt-3"
-					onClick={() => setAmount(2)}
+					onClick={handleCloseComment}
 					style={
 						amount <= 2 || comment.length <= 2 ? { display: 'none' } : { display: 'block' }
 					}

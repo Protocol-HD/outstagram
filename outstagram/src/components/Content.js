@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Content({ post }) {
 	const [categoryName, setCategoryName] = useState("");
@@ -66,6 +67,7 @@ function Content({ post }) {
 					<div className="likeText">{like ? ("좋아요!!") : ("")}</div>
 				</div>
 				<p>{post.text.length > 300 ? viewMore() : post.text}</p>
+				<Link to={`/editpost/${post.id}`}><button type="button" className="btn btn-primary mt-3" >글 수정</button></Link>
 			</div>
 			<div className="card-horizontal-meta">
 				<div className="eskimo-author-meta">

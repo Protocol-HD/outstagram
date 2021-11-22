@@ -3,13 +3,14 @@ import React, { useRef } from 'react';
 function CommentWrite({ postId, setCommentAdd }) {
 	const refComment = useRef(null);
 	const refName = useRef(null);
-	const date = new Date(+new Date() + 3240 * 10000).toISOString().split("T")[0]
-	const time = new Date().toTimeString().split(" ")[0];
 
 	const handelSubmit = (event) => {
 		event.preventDefault();
 
 		if (refName.current.value !== "" && refComment.current.value !== "") {
+			const date = new Date(+new Date() + 3240 * 10000).toISOString().split("T")[0]
+			const time = new Date().toTimeString().split(" ")[0];
+
 			fetch("http://localhost:3005/comments", {
 				method: "POST",
 				headers: { "content-Type": "application/json" },

@@ -1,55 +1,79 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 
 function AddPost() {
+	const [newPost, setNewPost] = useState({
+		author: "",
+		postTitle: "",
+		categoryId: "",
+		tags: "",
+		titleImage: "",
+		images: "",
+		text: "",
+		snsList: "",
+		created: "",
+		updated: "",
+		like: false
+	});
+	const [categories, setCategories] = useState([]);
+	const [sns, setSns] = useState([]);
 
-	const refAuthor = useRef(null);
-	const refPostTitle = useRef(null);
-	const refCategoryId = useRef(null);
-	const refTags = useRef(null);
-	const refTitleImage = useRef(null);
-	const refImages = useRef(null);
-	const refText = useRef(null);
-	const refSnsList = useRef(null);
+	const handleSubmit = (e) => {
+		const { name, value } = e.target
+		setNewPost({
+			...newPost, [name]: value
+		})
+	}
 
 
-	const handelSubmit = (event) => {
+	const onSubmit = (event) => {
 		event.preventDefault();
 
-		if (refAuthor.current.value !== "" && refPostTitle.current.value !== "" && refTitleImage.current.value !== "" && refText.current.value !== "") {
+		if (newPost.author != "" && newPost.postTitle != "" && newPost.titleImage != "" && newPost.text != "") {
+			const date = new Date(+new Date() + 3240 * 10000).toISOString().split("T")[0]
+			const time = new Date().toTimeString().split(" ")[0];
 			fetch("http://localhost:3005/Post", {
 				method: "POST",
 				headers: { "content-Type": "application/json" },
 				body: JSON.stringify({
-					author: refAuthor.current.value,
-					postTitle: refPostTitle.current.value,
-					categoryId: refCategoryId.current.value,
-					tags: refTags.current.value,
-					titleImage: refTitleImage.current.value,
-					images: refImages.current.value,
-					text: refText.current.value,
-					snsList: refSnsList.current.value,
-					created: Date(),
-					updated: Date(),
-					like: false
+					...newPost,
+					created: date + ' ' + time,
+					updated: date + ' ' + time
 				})
 			})
 				.then(
 					res => {
 						if (res.ok) {
 							alert("등록에 성공했습니다.")
-							refAuthor.current.value = "";
-							refPostTitle.current.value = "";
-							refCategoryId.current.value = "";
-							refTags.current.value = "";
-							refTitleImage.current.value = "";
-							refImages.current.value = "";
-							refText.current.value = "";
-							refSnsList.current.value = "";
 						}
 					}
 				);
 		}
 	}
+
+	useEffect(() => {
+		fetch("http://localhost:3005/categories")
+			.then(
+				res => {
+					return res.json();
+				}
+			)
+			.then(
+				data => {
+					setCategories(data)
+				}
+			);
+		fetch("http://localhost:3005/sns")
+			.then(
+				res => {
+					return res.json();
+				}
+			)
+			.then(
+				data => {
+					setSns(data)
+				}
+			);
+	}, []);
 	return (
 		<>
 			<figure class="text-center">
@@ -61,31 +85,37 @@ function AddPost() {
 				</figcaption>
 			</figure>
 
-			<form onSubmit={handelSubmit}>
-				<div className="input-group mb-2">
-					<input type="text" className="form-control" placeholder="Author" aria-label="Author" aria-describedby="button-addon2" ref={refAuthor} />
+			<form onSubmit={onSubmit}>
+				<div className="input-group mb-2  inputBox">
+					<input type="text" className="form-control" placeholder="Author" aria-label="Author" aria-describedby="button-addon2" onChange={handleSubmit} name="author" />
 				</div>
-				<div className="input-group mb-2">
-					<input type="text" className="form-control" placeholder="Post Title" aria-label="Post Title" aria-describedby="button-addon2" ref={refPostTitle} />
+				<div className="input-group mb-2  inputBox">
+					<input type="text" className="form-control" placeholder="Post Title" aria-label="Post Title" aria-describedby="button-addon2" onChange={handleSubmit} name="postTitle" />
 				</div>
-				<div className="input-group mb-2">
-					<input type="text" className="form-control" placeholder="Category Id" aria-label="Category Id" aria-describedby="button-addon2" ref={refCategoryId} />
+				<select className="form-select mb-2 p-2 col-12" aria-label="Default select example" onChange={handleSubmit} name="categoryId">
+					<option defaultValue>Select Category</option>
+					{
+						categories.map(category => (<option key={category.id} value={category.id}>{category.name}</option>))
+					}
+				</select>
+				<div className="input-group mb-2  inputBox">
+					<input type="text" className="form-control" placeholder="Tags" aria-label="Tags" aria-describedby="button-addon2" onChange={handleSubmit} name="tags" />
 				</div>
-				<div className="input-group mb-2">
-					<input type="text" className="form-control" placeholder="Tags" aria-label="Tags" aria-describedby="button-addon2" ref={refTags} />
+				<div className="input-group mb-2  inputBox">
+					<input type="text" className="form-control" placeholder="Title Image" aria-label="Title Image" aria-describedby="button-addon2" onChange={handleSubmit} name="titleImage" />
 				</div>
-				<div className="input-group mb-2">
-					<input type="text" className="form-control" placeholder="Title Image" aria-label="Title Image" aria-describedby="button-addon2" ref={refTitleImage} />
+				<div className="input-group mb-2  inputBox">
+					<input type="text" className="form-control" placeholder="Image1s" aria-label="Images" aria-describedby="button-addon2" onChange={handleSubmit} name="images" />
 				</div>
-				<div className="input-group mb-2">
-					<input type="text" className="form-control" placeholder="Image1s" aria-label="Images" aria-describedby="button-addon2" ref={refImages} />
+				<div className="input-group mb-2  inputBox">
+					<textarea  type="text" className="form-control" placeholder="Text" aria-label="Text" aria-describedby="button-addon2" onChange={handleSubmit} name="text" />
 				</div>
-				<div className="input-group mb-2">
-					<input type="text" className="form-control" placeholder="Text" aria-label="Text" aria-describedby="button-addon2" ref={refText} />
-				</div>
-				<div className="input-group mb-5">
-					<input type="text" className="form-control" placeholder="SNS" aria-label="SNS" aria-describedby="button-addon2" ref={refSnsList} />
-				</div>
+				<select className="form-select mb-2 p-2 col-12" aria-label="Default select example" onChange={handleSubmit} name="snsList">
+					<option defaultValue>Select SNS</option>
+					{
+						sns.map(sns => (<option key={sns.id} value={sns.id}>{sns.name}</option>))
+					}
+				</select>
 				<button type="submit" className="btn btn-primary">Submit</button>
 			</form>
 		</>

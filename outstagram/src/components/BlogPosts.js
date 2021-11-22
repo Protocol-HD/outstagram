@@ -13,7 +13,7 @@ function BlogPosts() {
 				);
 			})
 			.then(data => {
-				setPosts(data);
+				setPosts(data.reverse());
 			})
 	}, []);
 	return (

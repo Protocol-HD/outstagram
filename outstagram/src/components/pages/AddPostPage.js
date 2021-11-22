@@ -1,20 +1,16 @@
 import React from 'react';
-import AddCategories from '../AddCategories';
 import AddPost from '../AddPost';
-import AddSns from '../AddSns';
 import PageTitle from '../PageTitle';
 
-function Test() {
+function AddPostPage() {
 	return (
 		<div id="eskimo-site-wrapper">
-			<PageTitle title = "Write" />
+			<PageTitle title="Add Post" />
 			<div className="testBox">
-				<AddSns />
-				<AddCategories />
 				<AddPost />
 			</div>
 		</div>
 	);
 }
 
-export default Test;
+export default AddPostPage;

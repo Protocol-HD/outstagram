@@ -36,7 +36,7 @@ function AddCategories() {
 			</figure>
 
 			<form onSubmit={handelSubmit}>
-				<div className="input-group mb-3">
+				<div className="input-group mb-3 inputBox">
 					<input type="text" className="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2" ref={refCategories} />
 				</div>
 				<button type="submit" className="btn btn-primary">Submit</button>
