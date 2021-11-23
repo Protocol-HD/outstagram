@@ -48,6 +48,20 @@
 	border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.delButton {
+	color: grey;
+	font-weight: lighter;
+	margin-left: 10px;
+}
+
+.innerList {
+	margin: 2px;
+}
+
+.cardCategory {
+	margin: 5px;
+}
+
 #photoBox div {
 	padding: 0 5px;
 	margin-top: 5px;

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 
 function SliderItem({ postId }) {
 	const [post, setPost] = useState([]);
-	const [categoryName, setCategoryName] = useState("");
 	const [slideImageUrl, setSlideImageUrl] = useState("");
 
 	useEffect(() => {
@@ -13,25 +12,19 @@ function SliderItem({ postId }) {
 			.then(data => {
 				setPost(data)
 				setSlideImageUrl(`./images/${data.titleImage}`)
-				callCategoryName(data.categoryId)
 			});
 	}, []);
 
-	const callCategoryName = (id) => {
-		fetch(`http://localhost:3005/categories/${id}`)
-			.then(res => {
-				return res.json()
-			})
-			.then(data => {
-				setCategoryName(data.name);
-			});
-	}
 	return (
 		<div>
 			<a className="eskimo-slider-img" href="single-post.html"></a>
 			<ul className="eskimo-slider-image-meta eskimo-image-meta-post">
-				<li><a href="single-post.html"><span className="badge badge-default">{post.created}</span></a></li>
-				<li><a href="category.html"><span className="badge badge-default">{categoryName}</span></a></li>
+				<li><a href="single-post.html"><span className="badge badge-default">{post.author}</span></a></li>
+				{
+					post.categoryId && post.categoryId.map(item => (
+						<li key={item.id}><a href="category.html"><span className="badge badge-default">{item.name}</span></a></li>
+					))
+				}
 			</ul>
 			<div className="clearfix"></div>
 			<img src={slideImageUrl} alt={post.postTitle} />

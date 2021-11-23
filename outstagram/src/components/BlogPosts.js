@@ -4,7 +4,6 @@ import Post from './Post';
 function BlogPosts() {
 	const [posts, setPosts] = useState([]);
 
-
 	useEffect(() => {
 		fetch(`http://localhost:3005/post`)
 			.then(res => {
@@ -16,6 +15,7 @@ function BlogPosts() {
 				setPosts(data.reverse());
 			})
 	}, []);
+
 	return (
 		<>
 			{

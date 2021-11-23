@@ -4,12 +4,13 @@ import PageTitle from '../PageTitle';
 function AddPostPage() {
 
 	const [categories, setCategories] = useState([]);
-	const [sns, setSns] = useState([]);
+	const [snsList, setSnsList] = useState([]);
 	const [tag, setTag] = useState([]);
+	const [category, setCategory] = useState([]);
 	const [newPost, setNewPost] = useState({
 		author: "",
 		postTitle: "",
-		categoryId: "",
+		categoryId: [],
 		tags: [],
 		titleImage: "",
 		images: "",
@@ -41,6 +42,27 @@ function AddPostPage() {
 		}
 	}
 
+	const addCategory = (e) => {
+		if (!category.find(item => (item.name == e.target.value)) && e.target.value !="Select Category") {
+			setCategory([
+				...category,
+				{
+					id: category.length + 1,
+					name: e.target.value
+				}
+			]);
+		e.target.value = "Select Category";
+		}
+	}
+
+	const delTag = (id) => {
+		setTag(tag.filter(item => item.id != id));
+	}
+
+	const delCategory = (id) => {
+		setCategory(category.filter(item => item.id != id));
+	}
+
 	const onSubmit = (event) => {
 		event.preventDefault();
 
@@ -54,7 +76,8 @@ function AddPostPage() {
 					...newPost,
 					created: date + ' ' + time,
 					updated: date + ' ' + time,
-					tags: tag
+					tags: tag,
+					categoryId: category
 				})
 			})
 				.then(
@@ -87,7 +110,7 @@ function AddPostPage() {
 			)
 			.then(
 				data => {
-					setSns(data)
+					setSnsList(data)
 				}
 			);
 	}, []);
@@ -108,43 +131,62 @@ function AddPostPage() {
 					<div className="input-group mb-2 inputBox">
 						<input type="text" className="form-control" placeholder="Author" aria-label="Author" aria-describedby="button-addon2" onChange={handleSubmit} name="author" />
 					</div>
+
 					<div className="input-group mb-2 inputBox">
 						<input type="text" className="form-control" placeholder="Post Title" aria-label="Post Title" aria-describedby="button-addon2" onChange={handleSubmit} name="postTitle" />
 					</div>
-					<select className="form-select mb-2 p-2 col-12" aria-label="Default select example" onChange={handleSubmit} name="categoryId">
+
+					{
+						category.map(item => (
+							<div class="badge bg-primary text-wrap align-self-center innerList" key={item.id}>
+								{item.name}
+								<span className="delButton pointer" onClick={() => delCategory(item.id)}>x</span>
+							</div>
+						))
+					}
+					<select className="form-select mb-2 p-2 col-12" aria-label="Default select example" onChange={handleSubmit} name="categoryId" onChange={addCategory}>
 						<option defaultValue>Select Category</option>
 						{
-							categories.map(category => (<option key={category.id} value={category.id}>{category.name}</option>))
+							categories.map(category => (<option key={category.id} value={category.name}>
+								{category.name}
+							</option>))
 						}
 					</select>
+
 					<figcaption class="blockquote-footer">
 						<cite title="Source Title">태그는 쉼표( , )로 구분</cite>
 					</figcaption>
 					{
 						tag.map(item => (
-							<div class="badge bg-primary text-wrap align-self-center" key={item.id}>
+							<div class="badge bg-primary text-wrap align-self-center innerList" key={item.id}>
 								{item.tagName}
+								<span className="delButton pointer" onClick={() => delTag(item.id)}>x</span>
 							</div>
 						))
 					}
 					<div className="input-group mb-2 inputBox">
 						<input type="text" className="form-control" placeholder="Tags" aria-label="Tags" aria-describedby="button-addon2" onChange={handleSubmit, addTag} name="tags" />
 					</div>
+
 					<div className="input-group mb-2 inputBox">
 						<input type="text" className="form-control" placeholder="Title Image" aria-label="Title Image" aria-describedby="button-addon2" onChange={handleSubmit} name="titleImage" />
 					</div>
+
 					<div className="input-group mb-2 inputBox">
 						<input type="text" className="form-control" placeholder="Image1s" aria-label="Images" aria-describedby="button-addon2" onChange={handleSubmit} name="images" />
 					</div>
+
 					<div className="input-group mb-2 inputBox">
 						<textarea type="text" className="form-control" placeholder="Text" aria-label="Text" aria-describedby="button-addon2" onChange={handleSubmit} name="text" />
 					</div>
+
 					<select className="form-select mb-2 p-2 col-12" aria-label="Default select example" onChange={handleSubmit} name="snsList">
 						<option defaultValue>Select SNS</option>
 						{
-							sns.map(sns => (<option key={sns.id} value={sns.id}>{sns.name}</option>))
+							snsList.map(sns => (<option key={sns.id} value={sns.id}>{sns.name}</option>))
 						}
 					</select>
+
 					<button type="submit" className="btn btn-primary">Submit</button>
 				</form>
 			</div>

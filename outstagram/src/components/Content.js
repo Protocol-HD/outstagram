@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function Content({ post }) {
-	const [categoryName, setCategoryName] = useState("");
 	const [like, setLike] = useState(post.like);
 	const [more, setMore] = useState(false);
 
@@ -37,20 +36,14 @@ function Content({ post }) {
 			});
 	}
 
-	useEffect(() => {
-		fetch(`http://localhost:3005/categories/${post.categoryId}`)
-			.then(res => {
-				return res.json()
-			})
-			.then(data => {
-				setCategoryName(data.name);
-			})
-	}, []);
-
 	return (
 		<>
 			<div className="card-category">
-				<a href="category.html">{categoryName}</a>
+				{
+					post.categoryId && post.categoryId.map(item => (
+						<a href="" className="cardCategory">{item.name}</a>
+					))
+				}
 			</div>
 			<h3 className="card-title"><a href="single-post.html">{post.postTitle}</a></h3>
 			<div className="card-excerpt">
@@ -69,7 +62,7 @@ function Content({ post }) {
 				<div className="eskimo-date-meta">
 					<a href="single-post.html">{post.created}</a>
 				</div>
-				<div className="eskimo-reading-meta">{post.updated}</div>
+				<div className="eskimo-reading-meta">수정: {post.updated}</div>
 			</div>
 		</>
 	);

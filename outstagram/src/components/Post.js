@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import Comments from './Comments';
 import CommentWrite from './CommentWrite';
