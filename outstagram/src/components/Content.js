@@ -3,20 +3,8 @@ import { Link } from 'react-router-dom';
 
 function Content({ post }) {
 	const [categoryName, setCategoryName] = useState("");
-	const [postImageUrl, setpostImageUrl] = useState("");
 	const [like, setLike] = useState(post.like);
 	const [more, setMore] = useState(false);
-
-
-	const callCategoryName = (id) => {
-		fetch(`http://localhost:3005/categories/${id}`)
-			.then(res => {
-				return res.json()
-			})
-			.then(data => {
-				setCategoryName(data.name);
-			})
-	}
 
 	const handleMore = () => {
 		setMore(!more);
@@ -50,8 +38,13 @@ function Content({ post }) {
 	}
 
 	useEffect(() => {
-		callCategoryName(post.categoryId);
-		setpostImageUrl(`./images/${post.titleImage}`);
+		fetch(`http://localhost:3005/categories/${post.categoryId}`)
+			.then(res => {
+				return res.json()
+			})
+			.then(data => {
+				setCategoryName(data.name);
+			})
 	}, []);
 
 	return (
@@ -61,13 +54,13 @@ function Content({ post }) {
 			</div>
 			<h3 className="card-title"><a href="single-post.html">{post.postTitle}</a></h3>
 			<div className="card-excerpt">
-				<img src={postImageUrl} />
+				<img src={`./images/${post.titleImage}`} />
 				<div className="likeBox">
 					<div className="like"><img src={like ? ("./images/like_true.svg") : ("./images/like.svg")} onClick={handleLike} /></div>
 					<div className="likeText">{like ? ("좋아요!!") : ("")}</div>
 				</div>
 				<p>{post.text.length > 300 ? viewMore() : post.text}</p>
-				<Link to={`/editpost/${post.id}`}><button type="button" className="btn btn-primary mt-3" >글 수정</button></Link>
+				<Link to={`/editpost${post.id}`}><button type="button" className="btn btn-primary mt-3" >글 수정</button></Link>
 			</div>
 			<div className="card-horizontal-meta">
 				<div className="eskimo-author-meta">

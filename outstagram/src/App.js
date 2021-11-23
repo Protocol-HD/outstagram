@@ -21,7 +21,7 @@ function App() {
 				<Route path="/signup" element={<SignUp />} />
 				<Route path="/adminpage" element={<AdminPage />} />
 				<Route path="/addpost" element={<AddPostPage />} />
-				<Route path="/editpost/:id" element={<EditPostPage />} />
+				<Route path="/editpost:id" element={<EditPostPage />} />
 			</Routes>
 
 			<GoToTopButton />
