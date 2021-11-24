@@ -40,7 +40,7 @@ function Comments({ postId, commentAdd, setCommentAdd }) {
 	}
 	return (
 		<div>
-			<table class="table table-hover table-sm table-borderless">
+			<table className="table table-hover table-sm table-borderless">
 				<thead>
 					<tr>
 						<th scope="col-2">아이디</th>
@@ -63,8 +63,7 @@ function Comments({ postId, commentAdd, setCommentAdd }) {
 					onClick={handleCloseComment}
 					style={
 						amount <= 2 || comment.length <= 2 ? { display: 'none' } : { display: 'block' }
-					}
-				>
+					}>
 					댓글 접기
 				</button>
 			</div>
