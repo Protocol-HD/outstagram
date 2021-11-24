@@ -3,8 +3,17 @@ import React, { useRef, useState } from 'react';
 function FullscreenSearch({ search, setSearch }) {
 	const refSearch = useRef();
 
+	//검색 기능용
+	const [posts, setPosts] = useState([]);
+
 	const onSubmit = (event) => {
 		event.preventDefault();
+
+		fetch(`http://localhost:3005/post`)
+			.then(res => {
+				return (res.json());
+			})
+			.then(data => setPosts(data));
 	}
 
 	return (

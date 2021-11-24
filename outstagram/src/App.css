@@ -15,6 +15,10 @@
 	text-align: center;
 }
 
+.textVertical {
+	vertical-align: middle;
+}
+
 .likeBox {
 	width: auto;
 	display: block;
