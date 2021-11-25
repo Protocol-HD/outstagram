@@ -4,7 +4,7 @@ function Creadits() {
 	return (
 		<div className="eskimo-footer-credits">
 			<p>
-				Made with love by <a href="https://themeforest.net/user/egemenerd" target="_blank">Egemenerd</a>
+				Made with love by Egemenerd
 			</p>
 		</div>
 	);

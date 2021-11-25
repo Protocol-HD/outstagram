@@ -16,7 +16,7 @@ function Comments({ postId, commentAdd, setCommentAdd }) {
 				setComment(data);
 				setCommentAdd(false);
 			});
-	}, [commentAdd]);
+	}, [postId, commentAdd, setCommentAdd]);
 
 	const comLists = comment.map(item => (
 		<tr key={item.id}>

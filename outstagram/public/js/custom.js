@@ -3,7 +3,7 @@
     
     /* CALCULATE PAGE TITLE NEGATIVE MARGIN */
     var adjustPageTitle = function () {
-        var distance = $('#eskimo-main-container > .container').offset().left - 295;
+        var distance = $('#eskimo-main-container > .container').offset();
         $('#eskimo-main-container').find('.eskimo-page-title').css('margin-right', -distance);
         $('#eskimo-main-container').find('.eskimo-page-title').css('padding-right', distance);
         $('#eskimo-main-container').find('.eskimo-page-title').css('opacity', 1);

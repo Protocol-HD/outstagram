@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import MainContainer from '../MainContainer';
 import ReadingPositionIndicator from '../ReadingPositionIndicator';
 import SlidePanel from '../SlidePanel';

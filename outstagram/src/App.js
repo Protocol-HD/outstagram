@@ -14,7 +14,6 @@ function App() {
 	return (
 		<BrowserRouter>
 			<Sidebar />
-
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/galleries" element={<Galleries />} />
@@ -23,7 +22,6 @@ function App() {
 				<Route path="/addpost" element={<AddPostPage />} />
 				<Route path="/editpost:id" element={<EditPostPage />} />
 			</Routes>
-
 			<GoToTopButton />
 			<Footer />
 		</BrowserRouter>

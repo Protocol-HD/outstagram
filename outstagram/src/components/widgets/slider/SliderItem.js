@@ -13,16 +13,16 @@ function SliderItem({ postId }) {
 				setPost(data)
 				setSlideImageUrl(`./images/${data.titleImage}`)
 			});
-	}, []);
+	}, [postId]);
 
 	return (
 		<div>
-			<a className="eskimo-slider-img" href="single-post.html"></a>
+			<div className="eskimo-slider-img"></div>
 			<ul className="eskimo-slider-image-meta eskimo-image-meta-post">
-				<li><a href="single-post.html"><span className="badge badge-default">{post.author}</span></a></li>
+				<li><span className="badge badge-default">{post.author}</span></li>
 				{
 					post.categoryId && post.categoryId.map(item => (
-						<li key={item.id}><a href="category.html"><span className="badge badge-default">{item.name}</span></a></li>
+						<li key={item.id}><span className="badge badge-default">{item.name}</span></li>
 					))
 				}
 			</ul>

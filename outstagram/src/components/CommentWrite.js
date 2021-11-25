@@ -36,10 +36,10 @@ function CommentWrite({ postId, setCommentAdd }) {
 	}
 	return (
 		<form onSubmit={handelSubmit}>
-			<div class="input-group mt-2">
-				<input type="text" placeholder="아이디" aria-label="First name" class="form-control col-2" ref={refName} />
-				<input type="text" placeholder="댓글" aria-label="Last name" class="form-control col-10" ref={refComment} />
-				<button type="submit" class="input-group-text pointer btn-primary">댓글 달기</button>
+			<div className="input-group mt-2">
+				<input type="text" placeholder="아이디" aria-label="First name" className="form-control col-2" ref={refName} />
+				<input type="text" placeholder="댓글" aria-label="Last name" className="form-control col-10" ref={refComment} />
+				<button type="submit" className="input-group-text pointer btn-primary">댓글 달기</button>
 			</div>
 		</form>
 	);

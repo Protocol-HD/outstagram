@@ -8,7 +8,7 @@ function TopIcons({ setSearch }) {
 				<a href="#eskimo-panel" className="eskimo-panel-open"><i className="fa fa-bars"></i></a>
 			</li> */}
 				<li id="eskimo-search-icon">
-					<a id="eskimo-open-search" onClick={()=>setSearch(true)}><i className="fa fa-search"></i></a>
+					<div id="eskimo-open-search" onClick={()=>setSearch(true)}><i className="fa fa-search"></i></div>
 				</li>
 			</ul>
 			<div className="clearfix"></div>

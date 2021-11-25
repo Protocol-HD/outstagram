@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import PageTitle from '../PageTitle';
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios';
 
 function AddPostPage() {
-
+	const postUrl = "http://localhost:3005/Post";
+	const catUrl = "http://localhost:3005/categories";
+	const snsUrl = "http://localhost:3005/sns";
+	const navigate = useNavigate();
 	const [categories, setCategories] = useState([]);
 	const [snsList, setSnsList] = useState([]);
 	const [tag, setTag] = useState([]);
+	const [tagKey, setTagKey] = useState(1);
 	const [category, setCategory] = useState([]);
 	const [newPost, setNewPost] = useState({
 		author: "",
@@ -21,6 +27,11 @@ function AddPostPage() {
 		like: false
 	});
 
+	useEffect(() => {
+		axios.get(catUrl).then(Response => setCategories(Response.data));
+		axios.get(snsUrl).then(Response => setSnsList(Response.data));
+	}, [catUrl, snsUrl]);
+
 	const handleSubmit = (e) => {
 		const { name, value } = e.target;
 		setNewPost({
@@ -30,20 +41,21 @@ function AddPostPage() {
 	}
 
 	const addTag = (e) => {
-		if (e.target.value[e.target.value.length - 1] == ",") {
+		if (e.target.value[e.target.value.length - 1] === ",") {
 			setTag([
 				...tag,
 				{
-					id: tag.length + 1,
+					id: tagKey,
 					tagName: e.target.value.substr(0, e.target.value.length - 1)
 				}
 			]);
 			e.target.value = "";
+			setTagKey(tagKey + 1);
 		}
 	}
 
 	const addCategory = (e) => {
-		if (!category.find(item => (item.name == e.target.value)) && e.target.value !="Select Category") {
+		if (!category.find(item => (item.name === e.target.value)) && e.target.value !== "Select Category") {
 			setCategory([
 				...category,
 				{
@@ -51,100 +63,61 @@ function AddPostPage() {
 					name: e.target.value
 				}
 			]);
-		e.target.value = "Select Category";
+			e.target.value = "Select Category";
 		}
 	}
 
 	const delTag = (id) => {
-		setTag(tag.filter(item => item.id != id));
+		setTag(tag.filter(item => item.id !== id));
 	}
 
 	const delCategory = (id) => {
-		setCategory(category.filter(item => item.id != id));
+		setCategory(category.filter(item => item.id !== id));
 	}
 
 	const onSubmit = (event) => {
 		event.preventDefault();
-
-		if (newPost.author != "" && newPost.postTitle != "" && newPost.titleImage != "" && newPost.text != "") {
-			const date = new Date(+new Date() + 3240 * 10000).toISOString().split("T")[0]
-			const time = new Date().toTimeString().split(" ")[0];
-			fetch("http://localhost:3005/Post", {
-				method: "POST",
-				headers: { "content-Type": "application/json" },
-				body: JSON.stringify({
-					...newPost,
-					created: date + ' ' + time,
-					updated: date + ' ' + time,
-					tags: tag,
-					categoryId: category
-				})
-			})
-				.then(
-					res => {
-						if (res.ok) {
-							alert("등록에 성공했습니다.")
-						}
-					}
-				);
-		}
+		const date = new Date(+new Date() + 3240 * 10000).toISOString().split("T")[0]
+		const time = new Date().toTimeString().split(" ")[0];
+		axios.post(postUrl, {
+			...newPost,
+			created: date + ' ' + time,
+			updated: date + ' ' + time,
+			tags: tag,
+			categoryId: category
+		}).then(navigate("/"));
 	}
-
-	useEffect(() => {
-		fetch("http://localhost:3005/categories")
-			.then(
-				res => {
-					return res.json();
-				}
-			)
-			.then(
-				data => {
-					setCategories(data)
-				}
-			);
-		fetch("http://localhost:3005/sns")
-			.then(
-				res => {
-					return res.json();
-				}
-			)
-			.then(
-				data => {
-					setSnsList(data)
-				}
-			);
-	}, []);
 	return (
 		<div id="eskimo-site-wrapper">
 			<PageTitle title="Add Post" />
-			<div className="testBox">
-				<figure class="text-center">
-					<blockquote class="blockquote">
+			<div className="testBox text-center">
+				<figure>
+					<blockquote className="blockquote">
 						<p>Post 추가</p>
 					</blockquote>
-					<figcaption class="blockquote-footer">
-						필수 작성란) <cite title="Source Title">작성자, 제목, 메인사진, 글내용</cite>
+					<figcaption className="blockquote-footer">
+						필수 작성란) <cite>작성자, 제목, 메인사진, 글내용</cite>
 					</figcaption>
 				</figure>
 
 				<form onSubmit={onSubmit}>
 					<div className="input-group mb-2 inputBox">
-						<input type="text" className="form-control" placeholder="Author" aria-label="Author" aria-describedby="button-addon2" onChange={handleSubmit} name="author" />
+						<input type="text" className="form-control" placeholder="Author" onChange={handleSubmit} name="author" required />
 					</div>
 
 					<div className="input-group mb-2 inputBox">
-						<input type="text" className="form-control" placeholder="Post Title" aria-label="Post Title" aria-describedby="button-addon2" onChange={handleSubmit} name="postTitle" />
+						<input type="text" className="form-control" placeholder="Post Title" onChange={handleSubmit} name="postTitle" required />
 					</div>
 
 					{
 						category.map(item => (
-							<div class="badge bg-primary text-wrap align-self-center innerList" key={item.id}>
+							<div className="badge bg-primary text-wrap align-self-center innerList" key={item.id}>
 								{item.name}
 								<span className="delButton pointer" onClick={() => delCategory(item.id)}>x</span>
 							</div>
 						))
 					}
-					<select className="form-select mb-2 p-2 col-12" aria-label="Default select example" onChange={handleSubmit} name="categoryId" onChange={addCategory}>
+					<select className="form-select mb-2 p-2 col-12" name="categoryId" onChange={addCategory}>
 						<option defaultValue>Select Category</option>
 						{
 							categories.map(category => (<option key={category.id} value={category.name}>
@@ -153,34 +126,34 @@ function AddPostPage() {
 						}
 					</select>
 
-					<figcaption class="blockquote-footer">
-						<cite title="Source Title">태그는 쉼표( , )로 구분</cite>
+					<figcaption className="blockquote-footer">
+						<cite>태그는 쉼표( , )로 구분</cite>
 					</figcaption>
 					{
 						tag.map(item => (
-							<div class="badge bg-primary text-wrap align-self-center innerList" key={item.id}>
+							<div className="badge bg-primary text-wrap align-self-center innerList" key={item.id}>
 								{item.tagName}
 								<span className="delButton pointer" onClick={() => delTag(item.id)}>x</span>
 							</div>
 						))
 					}
 					<div className="input-group mb-2 inputBox">
-						<input type="text" className="form-control" placeholder="Tags" aria-label="Tags" aria-describedby="button-addon2" onChange={handleSubmit, addTag} name="tags" />
+						<input type="text" className="form-control" placeholder="Tags" onChange={addTag} name="tags" />
 					</div>
 
 					<div className="input-group mb-2 inputBox">
-						<input type="text" className="form-control" placeholder="Title Image" aria-label="Title Image" aria-describedby="button-addon2" onChange={handleSubmit} name="titleImage" />
+						<input type="text" className="form-control" placeholder="Title Image" onChange={handleSubmit} name="titleImage" required />
 					</div>
 
 					<div className="input-group mb-2 inputBox">
-						<input type="text" className="form-control" placeholder="Image1s" aria-label="Images" aria-describedby="button-addon2" onChange={handleSubmit} name="images" />
+						<input type="text" className="form-control" placeholder="Image1s" onChange={handleSubmit} name="images" />
 					</div>
 
 					<div className="input-group mb-2 inputBox">
-						<textarea type="text" className="form-control" placeholder="Text" aria-label="Text" aria-describedby="button-addon2" onChange={handleSubmit} name="text" />
+						<textarea type="text" className="form-control" placeholder="Text" onChange={handleSubmit} name="text" required />
 					</div>
 
-					<select className="form-select mb-2 p-2 col-12" aria-label="Default select example" onChange={handleSubmit} name="snsList">
+					<select className="form-select mb-2 p-2 col-12" onChange={handleSubmit} name="snsList">
 						<option defaultValue>Select SNS</option>
 						{
 							snsList.map(sns => (<option key={sns.id} value={sns.id}>{sns.name}</option>))
