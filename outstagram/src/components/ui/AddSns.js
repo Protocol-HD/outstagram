@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useRef } from 'react';
 
 function AddSns() {
-	const url = "http://localhost:3005/sns";
+	const url = "http://localhost:5000/sns";
 	const refSns = useRef(null);
 	const handelSubmit = (e) => {
 		e.preventDefault();

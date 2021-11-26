@@ -1,59 +1,73 @@
-import React, { useState } from 'react';
+import axios from 'axios';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Content({ post }) {
-	const [like, setLike] = useState(post.like);
-	const [more, setMore] = useState(false);
-
-	const handleMore = () => {
-		setMore(!more);
-	}
-
-	const viewMore = () => {
-		return (
-			<>
-				<div>{more ? post.text : post.text.substr(0, 300) + "..."}</div>
-				<button type="button" className={more ? "btn btn-secondary mt-3" : "btn btn-primary mt-3"} onClick={handleMore}>
-					{more ? "접기" : "더 보기"}
-				</button>
-			</>
-		);
-	}
-
+function Content({ post, refreash, comment }) {
+	const url = `http://localhost:5001/post/${post.id}`;
+	const commentUrl = `http://localhost:5002/comments/`;
 	const handleLike = () => {
-		fetch(`http://localhost:3005/post/${post.id}`, {
-			method: "PUT",
-			headers: {
-				"Content-Type": "application/json"
-			},
-			body: JSON.stringify({
-				...post,
-				like: !like
-			})
-		})
-			.then(res => {
-				if (res.ok) setLike(!like);
-			});
+		axios.put(url, { ...post, like: !post.like });
+		axios.put(url, { ...post, likeCount: post.likeCount + 1 })
+		refreash();
+
+	}
+
+	const delPost = () => {
+		if (window.confirm("정말 삭제하시겠습니까?")) {
+			comment.map(commnt => axios.delete(commentUrl + commnt.id));
+			axios.delete(commentUrl)
+			axios.delete(url).then(refreash());
+		}
 	}
 
 	return (
 		<>
-			<div className="card-category">
-				{
-					post.categoryId && post.categoryId.map(item => (
-						<span key={item.id} className="cardCategory">{item.name}</span>
-					))
-				}
+			<div className="d-flex justify-content-between">
+				<div className="d-inline-block">
+					<div className="card-category">
+						{
+							post.categoryId && post.categoryId.map(item => (
+								<span key={item.id} className="cardCategory">{item.name}</span>
+							))
+						}
+					</div>
+					<h3 className="card-title">{post.postTitle}</h3>
+				</div>
+				<div>
+					<Link to={`/editpost${post.id}`}>
+						<button type="button" className="btn btn-primary mt-3">Edit</button>
+					</Link>
+					<button type="button" className="btn btn-secondary mt-3" onClick={delPost}>Del</button>
+				</div>
 			</div>
-			<h3 className="card-title">{post.postTitle}</h3>
+
 			<div className="card-excerpt">
 				<img src={`./images/${post.titleImage}`} alt="" />
 				<div className="likeBox">
-					<div className="like"><img src={like ? ("./images/like_true.svg") : ("./images/like.svg")} alt="" onClick={handleLike} /></div>
-					<div className="likeText">{like ? ("좋아요!!") : ("")}</div>
+					<div className="like">
+						<img src={post.like ? ("./images/like_true.svg") : ("./images/like.svg")} alt="" onClick={handleLike} />
+					</div>
+					<span className="text-muted likeCountNum">{post.likeCount}</span>
+					<div className="likeText">{post.like ? ("좋아요!!") : ("")}</div>
+					<div className="eskimo-meta-tags mt-2">
+						{
+							post.tags && post.tags.map(tag => (
+								<span key={tag.id} className="badge badge-default">
+									#{tag.tagName}
+								</span>
+							))
+						}
+					</div>
 				</div>
-				<div>{post.text.length > 300 ? viewMore() : post.text}</div>
-				<Link to={`/editpost${post.id}`}><button type="button" className="btn btn-primary mt-3" >글 수정</button></Link>
+				<div>
+					{post.text.length > 300 ? post.text.substr(0, 300) + "..." : post.text}
+				</div>
+				<div>
+					<Link to={`/singlepost${post.id}`}>
+						<button type="button" className="btn btn-primary mt-3">더 보기</button>
+					</Link>
+				</div>
+
 			</div>
 			<div className="card-horizontal-meta">
 				<div className="eskimo-author-meta">

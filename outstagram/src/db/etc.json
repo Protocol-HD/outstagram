@@ -1,0 +1,48 @@
+{
+  "categories": [
+    {
+      "name": "LifeStyle",
+      "id": 1
+    },
+    {
+      "name": "Game",
+      "id": 2
+    },
+    {
+      "name": "Shopping",
+      "id": 3
+    },
+    {
+      "name": "Food",
+      "id": 4
+    },
+    {
+      "name": "Party",
+      "id": 5
+    }
+  ],
+  "sns": [
+    {
+      "name": "Facebook",
+      "id": 1
+    },
+    {
+      "name": "Twiter",
+      "id": 2
+    },
+    {
+      "name": "Instagram",
+      "id": 3
+    }
+  ],
+  "Sliders": [
+    {
+      "postId": 1,
+      "id": 1
+    },
+    {
+      "postId": 2,
+      "id": 2
+    }
+  ]
+}

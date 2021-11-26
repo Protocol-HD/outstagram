@@ -4,27 +4,34 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
 
 function AddPostPage() {
-	const postUrl = "http://localhost:3005/Post";
-	const catUrl = "http://localhost:3005/categories";
-	const snsUrl = "http://localhost:3005/sns";
+	const postUrl = "http://localhost:5001/post";
+	const catUrl = "http://localhost:5000/categories";
+	const snsUrl = "http://localhost:5000/sns";
 	const navigate = useNavigate();
+
 	const [categories, setCategories] = useState([]);
 	const [snsList, setSnsList] = useState([]);
+
+	const [image, setImage] = useState([]);
+	const [imageKey, setImageKey] = useState(1);
 	const [tag, setTag] = useState([]);
 	const [tagKey, setTagKey] = useState(1);
 	const [category, setCategory] = useState([]);
+	const [categoryKey, setCategoryKey] = useState(1);
+
 	const [newPost, setNewPost] = useState({
 		author: "",
 		postTitle: "",
 		categoryId: [],
 		tags: [],
 		titleImage: "",
-		images: "",
+		images: [],
 		text: "",
 		snsList: "",
 		created: "",
 		updated: "",
-		like: false
+		like: false,
+		likeCount: 0
 	});
 
 	useEffect(() => {
@@ -40,6 +47,20 @@ function AddPostPage() {
 		});
 	}
 
+	const addImage = (e) => {
+		if (e.target.value[e.target.value.length - 1] === ",") {
+			setImage([
+				...image,
+				{
+					id: imageKey,
+					image: e.target.value.substr(0, e.target.value.length - 1)
+				}
+			]);
+			e.target.value = "";
+			setImageKey(imageKey + 1);
+		}
+	}
+	
 	const addTag = (e) => {
 		if (e.target.value[e.target.value.length - 1] === ",") {
 			setTag([
@@ -59,12 +80,17 @@ function AddPostPage() {
 			setCategory([
 				...category,
 				{
-					id: category.length + 1,
+					id: categoryKey,
 					name: e.target.value
 				}
 			]);
 			e.target.value = "Select Category";
+			setCategoryKey(categoryKey + 1);
 		}
+	}
+
+	const delImage = (id) => {
+		setImage(image.filter(item => item.id !== id));
 	}
 
 	const delTag = (id) => {
@@ -83,6 +109,7 @@ function AddPostPage() {
 			...newPost,
 			created: date + ' ' + time,
 			updated: date + ' ' + time,
+			images: image,
 			tags: tag,
 			categoryId: category
 		}).then(navigate("/"));
@@ -109,14 +136,16 @@ function AddPostPage() {
 						<input type="text" className="form-control" placeholder="Post Title" onChange={handleSubmit} name="postTitle" required />
 					</div>
 
-					{
-						category.map(item => (
-							<div className="badge bg-primary text-wrap align-self-center innerList" key={item.id}>
-								{item.name}
-								<span className="delButton pointer" onClick={() => delCategory(item.id)}>x</span>
-							</div>
-						))
-					}
+					<div className="eskimo-meta-tags mt-0">
+						{
+							category.map(item => (
+								<div className="badge badge-primary" key={item.id}>
+									{item.name}
+									<span className="delButton pointer" onClick={() => delCategory(item.id)}>x</span>
+								</div>
+							))
+						}
+					</div>
 					<select className="form-select mb-2 p-2 col-12" name="categoryId" onChange={addCategory}>
 						<option defaultValue>Select Category</option>
 						{
@@ -127,16 +156,18 @@ function AddPostPage() {
 					</select>
 
 					<figcaption className="blockquote-footer">
-						<cite>태그는 쉼표( , )로 구분</cite>
+						<cite>쉼표( , )로 구분</cite>
 					</figcaption>
-					{
-						tag.map(item => (
-							<div className="badge bg-primary text-wrap align-self-center innerList" key={item.id}>
-								{item.tagName}
-								<span className="delButton pointer" onClick={() => delTag(item.id)}>x</span>
-							</div>
-						))
-					}
+					<div className="eskimo-meta-tags mt-0">
+						{
+							tag.map(item => (
+								<div className="badge badge-default" key={item.id}>
+									#{item.tagName}
+									<span className="delButton pointer" onClick={() => delTag(item.id)}>x</span>
+								</div>
+							))
+						}
+					</div>
 					<div className="input-group mb-2 inputBox">
 						<input type="text" className="form-control" placeholder="Tags" onChange={addTag} name="tags" />
 					</div>
@@ -145,12 +176,25 @@ function AddPostPage() {
 						<input type="text" className="form-control" placeholder="Title Image" onChange={handleSubmit} name="titleImage" required />
 					</div>
 
+					<figcaption className="blockquote-footer">
+						<cite>쉼표( , )로 구분</cite>
+					</figcaption>
+					<div className="eskimo-meta-tags mt-0">
+						{
+							image.map(item => (
+								<div className="badge badge-success" key={item.id}>
+									@{item.image}
+									<span className="delButton pointer" onClick={() => delImage(item.id)}>x</span>
+								</div>
+							))
+						}
+					</div>
 					<div className="input-group mb-2 inputBox">
-						<input type="text" className="form-control" placeholder="Image1s" onChange={handleSubmit} name="images" />
+						<input type="text" className="form-control" placeholder="Images" onChange={addImage} name="images" />
 					</div>
 
 					<div className="input-group mb-2 inputBox">
-						<textarea type="text" className="form-control" placeholder="Text" onChange={handleSubmit} name="text" required />
+						<textarea type="text" className="form-control text-box" placeholder="Text" onChange={handleSubmit} name="text" required />
 					</div>
 
 					<select className="form-select mb-2 p-2 col-12" onChange={handleSubmit} name="snsList">

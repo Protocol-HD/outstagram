@@ -7,7 +7,7 @@ function FullscreenSearch({ search, setSearch }) {
 				<div onClick={() => setSearch(false)} id="eskimo-close-search"><i className="fa fa-times"></i></div>
 				<form role="search" method="get" action="search.html" className="eskimo-lg-form">
 					<div className="input-group">
-						<input type="text" className="form-control form-control-lg" placeholder="Enter a keyword..." name="s"/>
+						<input type="text" className="form-control form-control-lg" placeholder="Enter a keyword..." name="s" />
 						<div className="input-group-append">
 							<button type="submit" className="btn btn-default"><i className="fa fa-search"></i></button>
 						</div>

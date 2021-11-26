@@ -7,22 +7,31 @@ import axios from 'axios';
 function EditPostPage() {
 	const { id } = useParams();
 	const navigate = useNavigate();
-	const postUrl = `http://localhost:3005/Post/${id}`;
-	const catUrl = "http://localhost:3005/categories";
-	const snsUrl = "http://localhost:3005/sns";
+	const postUrl = `http://localhost:5001/post/${id}`;
+	const catUrl = "http://localhost:5000/categories";
+	const snsUrl = "http://localhost:5000/sns";
+
 	const [post, setPost] = useState([]);
 	const [categories, setCategories] = useState([]);
 	const [snsList, setSnsList] = useState([]);
+
+	const [image, setImage] = useState([]);
+	const [imageKey, setImageKey] = useState(1);
 	const [tag, setTag] = useState([]);
 	const [tagKey, setTagKey] = useState(1);
 	const [category, setCategory] = useState([]);
+	const [categoryKey, setCategoryKey] = useState(1);
 
 	useEffect(() => {
 		axios.get(postUrl).then(Response => {
 			setPost(Response.data);
 			setTag(Response.data.tags);
-			setCategory(Response.data.categoryId);
 			setTagKey(Response.data.tags.length + 1);
+			setCategory(Response.data.categoryId);
+			setCategoryKey(Response.data.categoryId.length + 1);
+			setImage(Response.data.images);
+			setImageKey(Response.data.images.length + 1);
+
 		});
 		axios.get(catUrl).then(Response => setCategories(Response.data));
 		axios.get(snsUrl).then(Response => setSnsList(Response.data));
@@ -34,6 +43,20 @@ function EditPostPage() {
 			...post,
 			[name]: value
 		})
+	}
+
+	const addImage = (e) => {
+		if (e.target.value[e.target.value.length - 1] === ",") {
+			setImage([
+				...image,
+				{
+					id: imageKey,
+					image: e.target.value.substr(0, e.target.value.length - 1)
+				}
+			]);
+			e.target.value = "";
+			setImageKey(imageKey + 1);
+		}
 	}
 
 	const addTag = (e) => {
@@ -55,12 +78,17 @@ function EditPostPage() {
 			setCategory([
 				...category,
 				{
-					id: category.length + 1,
+					id: categoryKey,
 					name: e.target.value
 				}
 			]);
 			e.target.value = "Select Category";
+			setCategoryKey(categoryKey + 1);
 		}
+	}
+
+	const delImage = (id) => {
+		setImage(image.filter(item => item.id !== id));
 	}
 
 	const delTag = (id) => {
@@ -78,6 +106,7 @@ function EditPostPage() {
 		axios.put(postUrl, {
 			...post,
 			updated: date + ' ' + time,
+			images: image,
 			tags: tag,
 			categoryId: category
 		}).then(navigate("/"));
@@ -86,7 +115,7 @@ function EditPostPage() {
 	return (
 		<div id="eskimo-site-wrapper">
 			<PageTitle title="Edit Post" />
-			<div className="testBox">
+			<div className="testBox  text-center">
 				<figure className="text-center">
 					<blockquote className="blockquote">
 						<p>Post 수정</p>
@@ -105,14 +134,16 @@ function EditPostPage() {
 						<input type="text" className="form-control" placeholder="Post Title" onChange={handleSubmit} value={post.postTitle} name="postTitle" required />
 					</div>
 
-					{
-						category.map(item => (
-							<div className="badge bg-primary text-wrap align-self-center innerList" key={item.id}>
-								{item.name}
-								<span className="delButton pointer" onClick={() => delCategory(item.id)}>x</span>
-							</div>
-						))
-					}
+					<div className="eskimo-meta-tags mt-0">
+						{
+							category.map(item => (
+								<div className="badge badge-primary" key={item.id}>
+									{item.name}
+									<span className="delButton pointer" onClick={() => delCategory(item.id)}>x</span>
+								</div>
+							))
+						}
+					</div>
 					<select className="form-select mb-2 p-2 col-12" name="categoryId" onChange={addCategory}>
 						<option defaultValue>Select Category</option>
 						{
@@ -123,16 +154,18 @@ function EditPostPage() {
 					</select>
 
 					<figcaption className="blockquote-footer">
-						<cite title="Source Title">태그는 쉼표( , )로 구분</cite>
+						<cite title="Source Title">쉼표( , )로 구분</cite>
 					</figcaption>
-					{
-						tag.map(item => (
-							<div className="badge bg-primary text-wrap align-self-center innerList" key={item.id}>
-								{item.tagName}
-								<span className="delButton pointer" onClick={() => delTag(item.id)}>x</span>
-							</div>
-						))
-					}
+					<div className="eskimo-meta-tags mt-0">
+						{
+							tag.map(item => (
+								<div className="badge badge-default" key={item.id}>
+									#{item.tagName}
+									<span className="delButton pointer" onClick={() => delTag(item.id)}>x</span>
+								</div>
+							))
+						}
+					</div>
 					<div className="input-group mb-2  inputBox">
 						<input type="text" className="form-control" placeholder="Tags" onChange={addTag} name="tags" />
 					</div>
@@ -141,12 +174,25 @@ function EditPostPage() {
 						<input type="text" className="form-control" placeholder="Title Image" onChange={handleSubmit} value={post.titleImage} name="titleImage" required />
 					</div>
 
+					<figcaption className="blockquote-footer">
+						<cite title="Source Title">쉼표( , )로 구분</cite>
+					</figcaption>
+					<div className="eskimo-meta-tags mt-0">
+						{
+							image.map(item => (
+								<div className="badge badge-success" key={item.id}>
+									@{item.image}
+									<span className="delButton pointer" onClick={() => delImage(item.id)}>x</span>
+								</div>
+							))
+						}
+					</div>
 					<div className="input-group mb-2  inputBox">
-						<input type="text" className="form-control" placeholder="Image1s" onChange={handleSubmit} value={post.images} name="images" />
+						<input type="text" className="form-control" placeholder="Image1s" onChange={addImage} name="images" />
 					</div>
 
 					<div className="input-group mb-2  inputBox">
-						<textarea type="text" className="form-control" placeholder="Text" onChange={handleSubmit} value={post.text} name="text" required />
+						<textarea type="text" className="form-control text-box" placeholder="Text" onChange={handleSubmit} value={post.text} name="text" required />
 					</div>
 
 					<select className="form-select mb-2 p-2 col-12" onChange={handleSubmit} value={post.snsList} name="snsList">

@@ -11,6 +11,10 @@
 	margin: auto;
 }
 
+.text-box {
+	height: 300px;
+}
+
 .textCenter {
 	text-align: center;
 }
@@ -47,7 +51,7 @@
 	cursor: pointer;
 }
 
-.inputBox{
+.inputBox {
 	border-right: 1px solid rgba(0, 0, 0, 0.1);
 	border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -66,12 +70,28 @@
 	margin: 5px;
 }
 
-#photoBox div {
-	padding: 0 5px;
-	margin-top: 5px;
-	margin-bottom: 5px;
+.signBox {
+	min-height: 75vh;
+	height: 100%;
 }
 
-#photoBoxContainer {
-	margin: 50px 0;
+.signForm {
+	width: 100%;
+	max-width: 330px;
+	margin: 40px;
+}
+
+.signErrMsg {
+	font-size: 0.8rem;
+	font-weight: 400;
+	color: red;
+}
+
+.overviewImg {
+	padding: 5px;
+	border-radius: 20px;
+}
+
+.likeCountNum {
+	margin-left: 10px;
 }

@@ -1,38 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
 
-function Comments({ postId, commentAdd, setCommentAdd }) {
-	const [comment, setComment] = useState([]);
-	const [amount, setAmount] = useState(2);
-	const [commentButton, setCommentButton] = useState(true);
+function Comments({ comment, refrashComment }) {
+	const url = `http://localhost:5002/comments`;
+	const [amount, setAmount] = useState(3);
 
-	useEffect(() => {
-		fetch(`http://localhost:3005/comments?postId=${postId}`)
-			.then(res => {
-				return (
-					res.json()
-				);
-			})
-			.then(data => {
-				setComment(data);
-				setCommentAdd(false);
-			});
-	}, [postId, commentAdd, setCommentAdd]);
-
-	const comLists = comment.map(item => (
-		<tr key={item.id}>
-			<td className="col-2">{item.author}</td>
-			<td className="col-8">{item.text}</td>
-			<td className="col-2">{item.updated}</td>
-		</tr>
-	)).slice(0, amount);
-
-	const handleAmount = () => {
-		setAmount(comment.length > amount ? amount + 2 : setCommentButton(false));
-	}
-
-	const handleCloseComment = () => {
-		setAmount(2);
-		setCommentButton(true);
+	const delComment = (id) => {
+		axios.delete(url + `/${id}`)
+		refrashComment();
 	}
 
 	if (comment.length < 1) {
@@ -48,27 +23,36 @@ function Comments({ postId, commentAdd, setCommentAdd }) {
 						<th scope="col-2">작성시간</th>
 					</tr>
 				</thead>
-				<tbody>{comLists}</tbody>
+				<tbody>
+					{
+						comment.map(item => (
+							<tr key={item.id}>
+								<td className="col-2">{item.author}</td>
+								<td className="col-8">{item.text}</td>
+								<td className="col-2">{item.updated}</td>
+								<td className="pointer" onClick={() => delComment(item.id)}>X</td>
+							</tr>
+						)).slice(0, amount)
+					}
+				</tbody>
 			</table>
 			<div className="d-flex justify-content-between">
 				<button
 					type="button"
-					className={commentButton ? "btn btn-primary mt-3" : "btn btn-secondary mt-3"}
-					onClick={handleAmount}
+					className={comment.length > amount ? "btn btn-primary mt-3" : "btn btn-secondary mt-3"}
+					onClick={() => setAmount(amount + 3)}
 				>
-					{commentButton ? "댓글 더 보기" : "댓글 끝"}</button>
+					{comment.length > amount ? "댓글 더 보기" : "댓글 끝"}
+				</button>
 				<button
 					type="button"
-					className="btn btn-primary mt-3"
-					onClick={handleCloseComment}
-					style={
-						amount <= 2 || comment.length <= 2 ? { display: 'none' } : { display: 'block' }
-					}>
+					className={comment.length > 3 && amount > 3 ? "btn btn-outline-primary mt-3 d-inline" : "d-none"}
+					onClick={() => setAmount(3)}
+				>
 					댓글 접기
 				</button>
 			</div>
-		</div>
-
+		</div >
 	);
 }
 

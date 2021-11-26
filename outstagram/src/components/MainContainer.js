@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import BlogPosts from './BlogPosts';
+import BlogPosts from './ui/BlogPosts';
 import PageTitle from './PageTitle';
-import Slider from './Slider';
-import TopIcons from './TopIcons';
+import Slider from './widgets/Slider';
+import TopIcons from './widgets/TopIcons';
 import FullscreenSearch from './FullscreenSearch'
 
 function MainContainer() {

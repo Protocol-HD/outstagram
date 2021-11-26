@@ -1,10 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import PageTitle from '../PageTitle';
-import Gallery from '../ui/Gallery';
+import Gallery from '../widgets/Gallery';
 
 function Galleries() {
-	const url = `http://localhost:3005/post`;
+	const url = `http://localhost:5001/post`;
 	const [posts, setPosts] = useState([]);
 
 	useEffect(() => {
@@ -13,10 +13,10 @@ function Galleries() {
 	return (
 		<div id="eskimo-site-wrapper">
 			<PageTitle title="Galleries" />
-			<div className="container-fluid d-inline-flex" id="photoBoxContainer">
-				<div className="row" id="photoBox">
+			<div className="container">
+				<div className="row">
 					{posts.map(item => (
-						<Gallery key={item.id} Url={item.titleImage} />
+						<Gallery key={item.id} titleImage={item.titleImage} />
 					))}
 				</div>
 			</div>

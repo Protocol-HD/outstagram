@@ -1,44 +1,33 @@
+import axios from 'axios';
 import React, { useRef } from 'react';
 
-function CommentWrite({ postId, setCommentAdd }) {
+function CommentWrite({ postId, refrashComment }) {
+	const url = "http://localhost:5002/comments";
 	const refComment = useRef(null);
 	const refName = useRef(null);
 
-	const handelSubmit = (event) => {
-		event.preventDefault();
+	const handelSubmit = (e) => {
+		e.preventDefault();
 
-		if (refName.current.value !== "" && refComment.current.value !== "") {
-			const date = new Date(+new Date() + 3240 * 10000).toISOString().split("T")[0]
-			const time = new Date().toTimeString().split(" ")[0];
+		const date = new Date(+new Date() + 3240 * 10000).toISOString().split("T")[0]
+		const time = new Date().toTimeString().split(" ")[0];
 
-			fetch("http://localhost:3005/comments", {
-				method: "POST",
-				headers: { "content-Type": "application/json" },
-				body: JSON.stringify({
-					author: refName.current.value,
-					text: refComment.current.value,
-					updated: date + ' ' + time,
-					postId: postId
-
-				})
-			})
-				.then(
-					res => {
-						if (res.ok) {
-							alert("등록에 성공했습니다.")
-							refName.current.value = "";
-							refComment.current.value = "";
-							setCommentAdd(true);
-						}
-					}
-				);
-		}
+		axios.post(url, {
+			author: refName.current.value,
+			text: refComment.current.value,
+			updated: date + ' ' + time,
+			postId: postId
+		}).then(() => {
+			refName.current.value = "";
+			refComment.current.value = "";
+			refrashComment();
+		});
 	}
 	return (
 		<form onSubmit={handelSubmit}>
 			<div className="input-group mt-2">
-				<input type="text" placeholder="아이디" aria-label="First name" className="form-control col-2" ref={refName} />
-				<input type="text" placeholder="댓글" aria-label="Last name" className="form-control col-10" ref={refComment} />
+				<input type="text" placeholder="아이디" className="form-control col-2" ref={refName} required />
+				<input type="text" placeholder="댓글" className="form-control col-10" ref={refComment} required />
 				<button type="submit" className="input-group-text pointer btn-primary">댓글 달기</button>
 			</div>
 		</form>

@@ -4,7 +4,7 @@ import PageTitle from '../PageTitle';
 import style from './SignUp.module.css'
 
 function SignUp() {
-	const url = "http://localhost:3005/users";
+	const url = "http://localhost:5003/users";
 	const refId = useRef(null);
 	const refPw = useRef(null);
 	const refPw2 = useRef(null);

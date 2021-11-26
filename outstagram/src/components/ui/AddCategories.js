@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useRef } from 'react';
 
 function AddCategories() {
-	const url = "http://localhost:3005/categories";
+	const url = "http://localhost:5000/categories";
 	const refCategories = useRef(null);
 	const handelSubmit = (event) => {
 		event.preventDefault();
