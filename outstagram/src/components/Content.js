@@ -1,15 +1,16 @@
 import axios from 'axios';
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function Content({ post, refreash, comment }) {
 	const url = `http://localhost:5001/post/${post.id}`;
 	const commentUrl = `http://localhost:5002/comments/`;
-	const handleLike = () => {
-		axios.put(url, { ...post, like: !post.like });
-		axios.put(url, { ...post, likeCount: post.likeCount + 1 })
-		refreash();
+	const [like, setLike] = useState(post.like);
 
+	const handleLike = () => {
+		axios.put(url, { ...post, like: !like }).then(setLike(!like));
+		axios.put(url, { ...post, likeCount: post.likeCount + 1 });
+		refreash();
 	}
 
 	const delPost = () => {
@@ -45,10 +46,10 @@ function Content({ post, refreash, comment }) {
 				<img src={`./images/${post.titleImage}`} alt="" />
 				<div className="likeBox">
 					<div className="like">
-						<img src={post.like ? ("./images/like_true.svg") : ("./images/like.svg")} alt="" onClick={handleLike} />
+						<img src={like ? ("./images/like_true.svg") : ("./images/like.svg")} alt="" onClick={handleLike} />
 					</div>
 					<span className="text-muted likeCountNum">{post.likeCount}</span>
-					<div className="likeText">{post.like ? ("좋아요!!") : ("")}</div>
+					<div className="likeText">{like ? ("좋아요!!") : ("")}</div>
 					<div className="eskimo-meta-tags mt-2">
 						{
 							post.tags && post.tags.map(tag => (

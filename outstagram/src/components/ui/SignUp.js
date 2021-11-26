@@ -68,7 +68,7 @@ function SignUp() {
 					<input type="text" className="form-control mb-3" placeholder="ID" ref={userId} onChange={checkId} required />
 				</div>
 				<div className="form-floating">
-					<input type="password" className="form-control" placeholder="Password" ref={userPw} onChange={checkPw} required />
+					<input type="password" className="form-control mb-3" placeholder="Password" ref={userPw} onChange={checkPw} required />
 				</div>
 				<div className="form-floating">
 					<input type="password" className="form-control" placeholder="Confirm Password" ref={userPw2} onChange={checkPw} required />
