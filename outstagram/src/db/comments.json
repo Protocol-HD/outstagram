@@ -1,7 +1,6 @@
 {
   "comments": [
     {
-<<<<<<< Updated upstream
       "author": "admin",
       "postId": "2",
       "text": "댓글",
@@ -128,18 +127,18 @@
       "id": 26
     },
     {
-      "author": "asdfsad",
-      "text": "fsadfsadfs",
-      "updated": "2021-11-29 11:17:06",
-      "postId": 2,
+      "author": "admin",
+      "postId": "2",
+      "text": "sadasda",
+      "updated": "2021-11-29 12:10:15",
       "id": 27
-=======
-      "author": "locafl",
-      "text": "flsdw",
-      "updated": "2021-11-29 11:44:13",
-      "postId": 2,
-      "id": 1
->>>>>>> Stashed changes
+    },
+    {
+      "author": "ads",
+      "text": "sdd",
+      "updated": "2021-11-29 12:12:30",
+      "postId": 3,
+      "id": 28
     }
   ]
 }
