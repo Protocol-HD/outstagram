@@ -31,13 +31,7 @@ function Content({ post, setRefreash }) {
 				<Link to={`/singlepost${post.id}`}>
 					<img src={`./images/${post.titleImage}`} alt="" />
 				</Link>
-				<div className="likeBox">
-				<div className="likeWrapper">
-					<div className="like-pointer" onClick={handleLike}>
-						<img src={post.like ? ("./images/like_true.svg") : ("./images/like.svg")} alt="" />
-					</div>
-					<span className="text-muted likeCountNum">{post.likeCount} Likes</span>
-				</div>
+				<div className="likeBox d-flex justify-content-between">
 					<div className="eskimo-meta-tags mt-2">
 						{
 							post.tags && post.tags.map(tag => (
@@ -46,6 +40,12 @@ function Content({ post, setRefreash }) {
 								</span>
 							))
 						}
+					</div>
+					<div className="likeWrapper">
+						<div className="like-pointer" onClick={handleLike}>
+							<img src={post.like ? ("./images/like_true.svg") : ("./images/like.svg")} alt="" />
+						</div>
+						<span className="text-muted likeCountNum">{post.likeCount} Likes</span>
 					</div>
 				</div>
 				<div className="textBox">
