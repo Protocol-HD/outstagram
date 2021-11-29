@@ -34,7 +34,7 @@ function Comments({ postId, refreash, setRefreash }) {
 								<td className="col-2">{item.author}</td>
 								<td className="col-8">{item.text}</td>
 								<td className="col-2">{item.updated}</td>
-								<td className="pointer" onClick={() => delComment(item.id)}>X</td>
+								<td className="pointer" onClick={() => delComment(item.id)}><i class="fa fa-times"></i></td>
 							</tr>
 						)).slice(0, amount)
 					}

@@ -67,7 +67,7 @@ html {
 body {
 	font-weight: 400;
 	color: #444;
-	font-family: 'Merriweather', Georgia, serif;
+	font-family: 'Gowun Dodum', sans-serif;
 	line-height: 1.88;
 	font-size: 1rem;
 	background-color: #ffffff;
@@ -103,14 +103,14 @@ button,
 .eskimo-carousel-view-more,
 .eskimo-slider-date,
 .eskimo-author-subtitle {
-	font-family: "Merriweather Sans", "Helvetica", Arial, sans-serif;
+	font-family: 'Gowun Dodum', sans-serif;
 }
 
 .eskimo-pager,
 .eskimo-page-links,
 .eskimo-top-icons li a span,
 .eskimo-categories ul li span {
-	font-family: "Helvetica", Arial, sans-serif;
+	font-family: 'Gowun Dodum', sans-serif;
 }
 
 h1,
@@ -126,7 +126,7 @@ h6,
 .h5,
 .h6,
 .card-title {
-	font-family: "Merriweather Sans", "Helvetica", Arial, sans-serif;
+	font-family: 'Gowun Dodum', sans-serif;
 	margin-bottom: 2rem;
 	font-weight: 700;
 	line-height: 1.3;
@@ -313,6 +313,10 @@ blockquote {
 	bottom: -3px;
 	position: absolute;
 	z-index: 2;
+}
+
+#clock{
+	padding-right : 5px;
 }
 
 .eskimo-bg-loader {
@@ -2584,6 +2588,8 @@ video {
 
 .eskimo-page-content {
 	font-size: 1.15rem;
+	font-family : 'Gowun Dodum', sans-serif;
+	font-weight : 700;
 }
 
 .eskimo-featured-img {
@@ -2720,7 +2726,9 @@ video {
 }
 
 .card-title {
+	margin-top : 1rem;
 	margin-bottom: 1rem;
+
 }
 
 .card img {
@@ -2763,7 +2771,16 @@ video {
 .card-excerpt p,
 .card-body p {
 	font-size: 1rem;
+	font-family: 'Gowun Dodum', sans-serif;
 }
+
+.textBox {
+	margin-top : 20px;
+	font-family: 'Gowun Dodum', sans-serif !important; 
+	font-size : 1.1rem;
+	font-weight: 600;
+	
+} 
 
 .card .card-footer {
 	padding: 1.5rem 2.5rem;
@@ -2780,6 +2797,7 @@ video {
 	width: 15px;
 	text-align: center;
 }
+
 
 .card-reading .fa {
 	width: 20px;
@@ -2871,10 +2889,28 @@ video {
 	height: 100%;
 }
 
+.table{
+	font-family: 'Gowun Dodum', sans-serif;
+}
+
+.table > thead > tr > th
+{
+	text-align: center;
+}
+
+.table > tbody > tr > .col-2
+{
+	text-align: center;
+}
+
+
+
+
 .card-horizontal-meta {
 	display: block;
 	margin-top: 2.25rem;
 	font-size: 0.8rem;
+	font-weight : bold;
 	text-transform: uppercase;
 	line-height: 1;
 }
@@ -3024,6 +3060,10 @@ z .eskimo_commentlist .comment-respond {
 	margin: 0px;
 	display: block;
 	font-style: normal;
+}
+
+.eskimo_comment_text p {
+	font-family: 'Gowun Dodum', sans-serif; 
 }
 
 .eskimo_cancel {
@@ -3798,7 +3838,8 @@ p.form-submit {
 	overflow: hidden;
 	margin: 0.5rem 0 0 0;
 	font-size: 1.15rem;
-	font-style: italic;
+	font-family: 'Gowun Dodum', sans-serif;
+	font-weight: bold;
 }
 
 .eskimo-slider-desc .card-title {
@@ -4255,6 +4296,7 @@ p.form-submit {
 	.eskimo-slider-desc-inner {
 		padding: 2rem;
 	}
+
 
 	.card-text {
 		display: none;

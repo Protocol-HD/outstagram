@@ -1,6 +1,7 @@
 {
   "comments": [
     {
+<<<<<<< Updated upstream
       "author": "admin",
       "postId": "2",
       "text": "댓글",
@@ -132,6 +133,13 @@
       "updated": "2021-11-29 11:17:06",
       "postId": 2,
       "id": 27
+=======
+      "author": "locafl",
+      "text": "flsdw",
+      "updated": "2021-11-29 11:44:13",
+      "postId": 2,
+      "id": 1
+>>>>>>> Stashed changes
     }
   ]
 }

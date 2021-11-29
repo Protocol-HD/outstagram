@@ -18,7 +18,7 @@ function SinglePostComments({ refreash, setRefreash }) {
 	return (
 		<div id="eskimo-comments-wrapper">
 			<div id="eskimo_comments_block" className="eskimo_comments_block">
-				<h3 className="eskimo-title-with-border">
+				<h3 className="eskimo-title-with-border mt-5">
 					<span>Comments</span>
 				</h3>
 				<div className="eskimo_commentlist">
@@ -38,9 +38,9 @@ function SinglePostComments({ refreash, setRefreash }) {
 														<span className="pointer" onClick={() => delComment(comment.id)}>X</span>
 													</cite>
 													<div className="eskimo_comment_links">
-														<i className="fa fa-clock-o"></i>
-														{comment.updated} -
-														<span >Reply</span>
+														<i className="fa fa-clock-o" id="clock"></i>
+														 {comment.updated} -
+														<span > Reply</span>
 													</div>
 													<div className="eskimo_comment_text">
 														<p>{comment.text}</p>
