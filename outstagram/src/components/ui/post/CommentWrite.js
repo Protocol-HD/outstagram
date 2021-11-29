@@ -1,17 +1,15 @@
 import axios from 'axios';
 import React, { useRef } from 'react';
 
-function CommentWrite({ postId, refrashComment }) {
+function CommentWrite({ postId, setRefreash }) {
 	const url = "http://localhost:5002/comments";
 	const refComment = useRef(null);
 	const refName = useRef(null);
 
 	const handelSubmit = (e) => {
 		e.preventDefault();
-
 		const date = new Date(+new Date() + 3240 * 10000).toISOString().split("T")[0]
 		const time = new Date().toTimeString().split(" ")[0];
-
 		axios.post(url, {
 			author: refName.current.value,
 			text: refComment.current.value,
@@ -20,7 +18,7 @@ function CommentWrite({ postId, refrashComment }) {
 		}).then(() => {
 			refName.current.value = "";
 			refComment.current.value = "";
-			refrashComment();
+			setRefreash(true);
 		});
 	}
 	return (

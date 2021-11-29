@@ -1,7 +1,9 @@
 import axios from 'axios';
 import React, { useRef } from 'react';
+import { useParams } from 'react-router';
 
-function SinglePostCommentWrite({ id, refreashComments }) {
+function SinglePostCommentWrite({ setRefreash }) {
+	const params = useParams();
 	const url = `http://localhost:5002/comments`;
 	const commentText = useRef();
 
@@ -11,10 +13,11 @@ function SinglePostCommentWrite({ id, refreashComments }) {
 		const time = new Date().toTimeString().split(" ")[0];
 		axios.post(url, {
 			author: "admin",
-			postId: id,
+			postId: params.id,
 			text: commentText.current.value,
 			updated: date + ' ' + time
-		}).then(refreashComments());
+		}).then(setRefreash(true));
+		commentText.current.value = "";
 	}
 
 	return (

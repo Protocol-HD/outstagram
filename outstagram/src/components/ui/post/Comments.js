@@ -1,14 +1,18 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-function Comments({ comment, refrashComment }) {
+function Comments({ postId, refreash, setRefreash }) {
 	const url = `http://localhost:5002/comments`;
+	const [comment, setComment] = useState([]);
 	const [amount, setAmount] = useState(3);
 
 	const delComment = (id) => {
-		axios.delete(url + `/${id}`)
-		refrashComment();
+		axios.delete(url + `/${id}`).then(setRefreash(true));
 	}
+
+	useEffect(() => {
+		axios.get(url + `?postId=${postId}`).then(Response => setComment(Response.data)).then(setRefreash(false));
+	}, [url, postId, refreash, setRefreash])
 
 	if (comment.length < 1) {
 		return null;

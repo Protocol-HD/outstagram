@@ -1,6 +1,27 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router';
 
-function SinglePostContents({ post }) {
+function SinglePostContents({ setTitle }) {
+	const params = useParams();
+	const url = `http://localhost:5001/post/${params.id}`;
+	const navigate = useNavigate();
+	const [post, setPost] = useState({});
+
+	useEffect(() => {
+		axios.get(url).then(Response => {
+			setPost(Response.data);
+			setTitle(Response.data.postTitle);
+		});
+	}, [url]);
+
+	const delPost = () => {
+		if (window.confirm("정말 삭제하시겠습니까?")) {
+			axios.delete(url).then(navigate("/"));
+		}
+	}
+
 	return (
 		<>
 			<div className="clearfix"></div>
@@ -23,15 +44,23 @@ function SinglePostContents({ post }) {
 						}
 					</div>
 				</div>
-				<p>{post.text}</p>
+				{/* <p className="mb-0">{post.text}</p> */}
 				<div className="clearfix"></div>
-				<div className="eskimo-meta-tags">
-					{
-						post.tags && post.tags.map(tag => (<span key={tag.id} className="badge badge-default">#{tag.tagName}</span>))
-					}
+				<div className="d-flex justify-content-between mb-3">
+					<div className="eskimo-meta-tags">
+						{
+							post.tags && post.tags.map(tag => (<span key={tag.id} className="badge badge-default">#{tag.tagName}</span>))
+						}
+					</div>
+					<div>
+						<Link to={`/editpost${post.id}`}>
+							<button type="button" className="btn btn-primary mt-3">Edit</button>
+						</Link>
+						<button type="button" className="btn btn-secondary mt-3" onClick={delPost}>Del</button>
+					</div>
 				</div>
 
-				<div className="eskimo-post-nav-wrapper">
+				{/* <div className="eskimo-post-nav-wrapper">
 					<div className="eskimo-post-nav-left-row">
 						<div className="eskimo-post-nav-table">
 							<span className="eskimo-post-nav" >
@@ -52,7 +81,7 @@ function SinglePostContents({ post }) {
 								<i className="fa fa-chevron-right"></i></span>
 						</div>
 					</div>
-				</div>
+				</div> */}
 			</div>
 			<div className="clearfix"></div>
 		</>

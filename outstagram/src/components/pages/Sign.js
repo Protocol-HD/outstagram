@@ -1,6 +1,6 @@
 import React from 'react';
-import SignIn from '../ui/SignIn';
-import SignUp from '../ui/SignUp';
+import SignIn from '../ui/sign/SignIn';
+import SignUp from '../ui/sign/SignUp';
 import PageTitle from '../PageTitle';
 
 function Sign() {

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import BlogPosts from './ui/BlogPosts';
 import PageTitle from './PageTitle';
 import Slider from './widgets/Slider';
 import TopIcons from './widgets/TopIcons';
 import FullscreenSearch from './FullscreenSearch'
+import Post from './pages/Post';
 
 function MainContainer() {
 	const [search, setSearch] = useState(false);
@@ -15,7 +15,7 @@ function MainContainer() {
 					<div className="container">
 						<TopIcons setSearch={setSearch} />
 						<Slider />
-						<BlogPosts />
+						<Post />
 					</div>
 				</main>
 			</div>
