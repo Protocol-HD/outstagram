@@ -235,6 +235,7 @@ dd {
 	margin-bottom: 1rem;
 }
 
+
 table {
 	margin: 2rem 0;
 	table-layout: auto;
@@ -2578,7 +2579,7 @@ video {
 
 .eskimo-meta-tags {
 	display: block;
-	margin: 40px 0 0 0;
+	margin: 60px 0 0 0;
 }
 
 .eskimo-meta-tags .badge {
@@ -2691,6 +2692,35 @@ video {
 	background-color: #222;
 	border-color: transparent;
 }
+
+.moreText > a{
+	position: relative;
+	margin : auto;
+}
+
+.like-pointer{
+	height : 2rem;
+	width : 2rem;
+	display : inline-block;
+}
+
+.like-pointer img{
+	-webkit-touch-callout: none; 
+	user-select: none; 
+	-moz-user-select: none; 
+	-ms-user-select: none; 
+	-webkit-user-select: none;
+}
+
+
+.likeCountNum {
+	font-family: 'Gowun Dodum', sans-serif;
+	font-style: italic;
+	font-size : 1.3rem;
+	font-weight : bolder;
+	display : inline-block;
+}
+
 
 /* ================= CARDS ================== */
 

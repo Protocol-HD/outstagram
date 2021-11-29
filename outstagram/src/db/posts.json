@@ -54,9 +54,9 @@
       "snsList": "2",
       "created": "2021-11-23 14:19:31",
       "updated": "2021-11-26 17:22:20",
-      "like": false,
+      "like": true,
       "id": 1,
-      "likeCount": 7
+      "likeCount": 166
     },
     {
       "author": "형동",
@@ -104,8 +104,8 @@
       "snsList": "3",
       "created": "2021-11-26 17:23:18",
       "updated": "2021-11-29 12:10:41",
-      "like": false,
-      "likeCount": 156,
+      "like": true,
+      "likeCount": 327,
       "id": 2
     }
   ]

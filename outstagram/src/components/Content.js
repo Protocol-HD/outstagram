@@ -1,20 +1,29 @@
 import axios from 'axios';
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function Content({ post, setRefreash }) {
-
+function Content({ post, refreash, comment }) {
 	const url = `http://localhost:5001/post/${post.id}`;
+	const commentUrl = `http://localhost:5002/comments/`;
+	const [like, setLike] = useState(post.like);
 
 	const handleLike = () => {
-		axios.put(url, {
-			...post, like: !post.like, likeCount: post.likeCount + 1
-		}).then(setRefreash(true));
+		axios.put(url, { ...post, like: !like }).then(setLike(!like));
+		axios.put(url, { ...post, likeCount: post.likeCount + 1 });
+		refreash();
+	}
+
+	const delPost = () => {
+		if (window.confirm("정말 삭제하시겠습니까?")) {
+			comment.map(commnt => axios.delete(commentUrl + commnt.id));
+			axios.delete(commentUrl)
+			axios.delete(url).then(refreash());
+		}
 	}
 
 	return (
 		<>
-			<div className="d-flex">
+			<div className="d-flex justify-content-between">
 				<div className="d-inline-block">
 					<div className="card-category">
 						{
@@ -25,19 +34,23 @@ function Content({ post, setRefreash }) {
 					</div>
 					<h3 className="card-title">{post.postTitle}</h3>
 				</div>
+				<div>
+					<Link to={`/editpost${post.id}`}>
+						<button type="button" className="btn btn-primary mt-3">Edit</button>
+					</Link>
+					<button type="button" className="btn btn-secondary mt-3" onClick={delPost}>Del</button>
+				</div>
 			</div>
 
 			<div className="card-excerpt">
-				<Link to={`/singlepost${post.id}`}>
-					<img src={`./images/${post.titleImage}`} alt="" />
-				</Link>
+				<img src={`./images/${post.titleImage}`} alt="" />
 				<div className="likeBox">
-				<div className="likeWrapper">
-					<div className="like-pointer" onClick={handleLike}>
-						<img src={post.like ? ("./images/like_true.svg") : ("./images/like.svg")} alt="" />
+					<div className="likeWrapper">
+					<div className="like">
+						<img src={like ? ("./images/like_yes.svg") : ("./images/like_no.svg")} alt="" onClick={handleLike} />
 					</div>
-					<span className="text-muted likeCountNum">{post.likeCount} Likes</span>
-				</div>
+					<span className="text-muted likeCountNum">{post.likeCount}Likes</span>
+					</div>
 					<div className="eskimo-meta-tags mt-2">
 						{
 							post.tags && post.tags.map(tag => (
@@ -48,10 +61,10 @@ function Content({ post, setRefreash }) {
 						}
 					</div>
 				</div>
-				<div className="textBox">
+				<div>
 					{post.text.length > 300 ? post.text.substr(0, 300) + "..." : post.text}
 				</div>
-				<div className="moreText d-flex justify-content-center">
+				<div>
 					<Link to={`/singlepost${post.id}`}>
 						<button type="button" className="btn btn-primary mt-3">더 보기</button>
 					</Link>

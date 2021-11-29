@@ -15,6 +15,7 @@
       "id": 26
     },
     {
+<<<<<<< Updated upstream
       "author": "ssdaf",
       "text": "asdfasdfsda",
       "updated": "2021-11-29 12:31:40",
@@ -39,15 +40,49 @@
       "author": "asdfasdf",
       "text": "asdfasdfwef",
       "updated": "2021-11-29 14:04:30",
+=======
+      "author": "ads",
+      "text": "sdd",
+      "updated": "2021-11-29 12:12:30",
+      "postId": 3,
+      "id": 28
+    },
+    {
+      "author": "admin",
+      "postId": "2",
+      "text": "asdasda",
+      "updated": "2021-11-29 13:56:02",
+      "id": 29
+    },
+    {
+      "author": "asdas",
+      "text": "asdsd",
+      "updated": "2021-11-29 14:05:08",
+>>>>>>> Stashed changes
       "postId": 2,
       "id": 30
     },
     {
+<<<<<<< Updated upstream
       "author": "이거",
       "text": "한글",
       "updated": "2021-11-29 14:06:45",
       "postId": 2,
       "id": 31
+=======
+      "author": "asdasd",
+      "text": "asdsd",
+      "updated": "2021-11-29 14:05:10",
+      "postId": 2,
+      "id": 31
+    },
+    {
+      "author": "asdasd",
+      "text": "asd",
+      "updated": "2021-11-29 14:05:12",
+      "postId": 2,
+      "id": 32
+>>>>>>> Stashed changes
     }
   ]
 }

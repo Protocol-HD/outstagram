@@ -35,7 +35,7 @@ function SinglePostComments({ refreash, setRefreash }) {
 												<div className="eskimo_comment_right_inner ">
 													<cite className="eskimo_fn d-flex justify-content-between">
 														<span>{comment.author}</span>
-														<span className="pointer" onClick={() => delComment(comment.id)}>X</span>
+														<span className="pointer" onClick={() => delComment(comment.id)}><i className="fa fa-times"></i></span>
 													</cite>
 													<div className="eskimo_comment_links">
 														<i className="fa fa-clock-o" id="clock"></i>

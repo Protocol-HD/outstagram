@@ -30,7 +30,7 @@ function SinglePostContents({ setTitle }) {
 			</div>
 			<div className="eskimo-page-content">
 				{post.text}
-				<div className="container">
+				<div className="container mt-3">
 					<div className="row">
 						{
 							post.images && post.images.map(image => (

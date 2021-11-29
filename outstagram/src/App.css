@@ -79,6 +79,7 @@
 }
 
 .signForm {
+	position: relative;
 	width: 100%;
 	max-width: 330px;
 	margin: 40px;
