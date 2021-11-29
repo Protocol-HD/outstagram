@@ -74,7 +74,7 @@ function SignUp() {
 					<input type="password" className="form-control" placeholder="Confirm Password" ref={userPw2} onChange={checkPw} required />
 				</div>
 				<div className="mt-2 signErrMsg">{errMsg}</div>
-				<button className="w-100 btn btn-lg btn-primary mt-3" type="submit">Sign up</button>
+				<button className="w-100 btn btn-lg btn-primary mt-3" id="SignUpButton" type="submit">Sign up</button>
 				<p className="mt-5 mb-3 text-muted">가입하기</p>
 			</form>
 		</div>

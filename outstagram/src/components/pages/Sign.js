@@ -7,7 +7,7 @@ function Sign() {
 	return (
 		<div id="eskimo-site-wrapper">
 			<PageTitle title="Sign in / Sign up" />
-			<div className="text-center signBox d-flex align-items-center justify-content-center flex-wrap">
+			<div className="text-center signBox d-flex justify-content-center flex-wrap">
 				<SignIn />
 				<SignUp />
 			</div>
