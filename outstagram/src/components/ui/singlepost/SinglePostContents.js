@@ -14,7 +14,7 @@ function SinglePostContents({ setTitle }) {
 			setPost(Response.data);
 			setTitle(Response.data.postTitle);
 		});
-	}, [url]);
+	}, [url, setTitle]);
 
 	const delPost = () => {
 		if (window.confirm("정말 삭제하시겠습니까?")) {
@@ -43,6 +43,9 @@ function SinglePostContents({ setTitle }) {
 							))
 						}
 					</div>
+				</div>
+				<div className="mt-2">
+					by {post.author}
 				</div>
 				{/* <p className="mb-0">{post.text}</p> */}
 				<div className="clearfix"></div>

@@ -69,8 +69,8 @@
 
 .cardCategory {
 	margin: 5px;
-	font-weight : bolder;
-	font-size : 1rem;
+	font-weight: bolder;
+	font-size: 1rem;
 }
 
 .signBox {
@@ -97,4 +97,12 @@
 
 .likeCountNum {
 	margin-left: 10px;
+}
+
+.commentText {
+	word-wrap: break-word;
+}
+
+.bold {
+	font-weight: bold;
 }

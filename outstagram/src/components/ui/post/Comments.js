@@ -19,27 +19,23 @@ function Comments({ postId, refreash, setRefreash }) {
 	}
 	return (
 		<div>
-			<table className="table table-hover table-sm table-borderless">
-				<thead>
-					<tr>
-						<th scope="col-2">아이디</th>
-						<th scope="col-8">댓글</th>
-						<th scope="col-2">작성시간</th>
-					</tr>
-				</thead>
-				<tbody>
-					{
-						comment.map(item => (
-							<tr key={item.id}>
-								<td className="col-2">{item.author}</td>
-								<td className="col-8">{item.text}</td>
-								<td className="col-2">{item.updated}</td>
-								<td className="pointer" onClick={() => delComment(item.id)}><i class="fa fa-times"></i></td>
-							</tr>
-						)).slice(0, amount)
-					}
-				</tbody>
-			</table>
+			<div className="table">
+				<div className="d-flex justify-content-start bold">
+					<div className="col-2">아이디</div>
+					<div className="col-7">댓글</div>
+					<div className="col-3">작성시간</div>
+				</div>
+				{
+					comment.map(item => (
+						<div key={item.id} className="d-flex justify-content-start">
+							<div className="col-2">{item.author}</div>
+							<div className="col-7">{item.text}</div>
+							<div className="col-3">{item.updated}</div>
+							<div className="pointer" onClick={() => delComment(item.id)}><i className="fa fa-times"></i></div>
+						</div>
+					)).slice(0, amount)
+				}
+			</div>
 			<div className="d-flex justify-content-between">
 				<button
 					type="button"

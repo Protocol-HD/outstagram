@@ -1,118 +1,6 @@
 {
   "comments": [
     {
-      "author": "admin",
-      "postId": "2",
-      "text": "댓글",
-      "updated": "2021-11-26 17:23:31",
-      "id": 6
-    },
-    {
-      "author": "admin",
-      "postId": "2",
-      "text": "ㅊㅎ러로포ㅓㅗㅓ",
-      "updated": "2021-11-26 17:31:10",
-      "id": 7
-    },
-    {
-      "author": "admin",
-      "postId": "2",
-      "text": "sdf",
-      "updated": "2021-11-29 08:43:12",
-      "id": 10
-    },
-    {
-      "author": "admin",
-      "postId": "2",
-      "text": "asdf",
-      "updated": "2021-11-29 09:31:47",
-      "id": 11
-    },
-    {
-      "author": "admin",
-      "postId": "2",
-      "text": "sadf",
-      "updated": "2021-11-29 09:55:52",
-      "id": 12
-    },
-    {
-      "author": "admin",
-      "postId": "2",
-      "text": "asdf11",
-      "updated": "2021-11-29 09:57:24",
-      "id": 14
-    },
-    {
-      "author": "admin",
-      "postId": "2",
-      "text": "123123",
-      "updated": "2021-11-29 09:57:51",
-      "id": 15
-    },
-    {
-      "author": "admin",
-      "postId": "2",
-      "text": "sadf",
-      "updated": "2021-11-29 10:02:31",
-      "id": 16
-    },
-    {
-      "author": "admin",
-      "postId": "2",
-      "text": "asdf",
-      "updated": "2021-11-29 10:04:37",
-      "id": 17
-    },
-    {
-      "author": "admin",
-      "postId": "2",
-      "text": "12",
-      "updated": "2021-11-29 10:04:40",
-      "id": 18
-    },
-    {
-      "author": "admin",
-      "postId": "2",
-      "text": "32",
-      "updated": "2021-11-29 10:04:42",
-      "id": 19
-    },
-    {
-      "author": "admin",
-      "postId": "2",
-      "text": "43",
-      "updated": "2021-11-29 10:04:43",
-      "id": 20
-    },
-    {
-      "author": "admin",
-      "postId": "2",
-      "text": "2",
-      "updated": "2021-11-29 10:05:22",
-      "id": 21
-    },
-    {
-      "author": "admin",
-      "postId": "2",
-      "text": "3",
-      "updated": "2021-11-29 10:05:24",
-      "id": 22
-    },
-    {
-      "author": "asdf",
-      "text": "asdf",
-      "updated": "2021-11-29 10:47:32",
-      "postId": 2,
-      "id": 23
-    },
-    {
-      "author": "asdf",
-      "text": "asdfsadf",
-      "updated": "2021-11-29 10:48:09",
-      "postId": 2,
-      "id": 24
-    },
-    {
       "author": "asdf",
       "text": "asdfasdf",
       "updated": "2021-11-29 10:49:49",
@@ -127,18 +15,39 @@
       "id": 26
     },
     {
-      "author": "admin",
-      "postId": "2",
-      "text": "sadasda",
-      "updated": "2021-11-29 12:10:15",
+      "author": "ssdaf",
+      "text": "asdfasdfsda",
+      "updated": "2021-11-29 12:31:40",
+      "postId": 2,
       "id": 27
     },
     {
-      "author": "ads",
-      "text": "sdd",
-      "updated": "2021-11-29 12:12:30",
-      "postId": 3,
+      "author": "asdf",
+      "text": "asdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfa",
+      "updated": "2021-11-29 12:43:22",
+      "postId": 2,
       "id": 28
+    },
+    {
+      "author": "sadfsf",
+      "text": "asdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfa",
+      "updated": "2021-11-29 12:43:27",
+      "postId": 2,
+      "id": 29
+    },
+    {
+      "author": "asdfasdf",
+      "text": "asdfasdfwef",
+      "updated": "2021-11-29 14:04:30",
+      "postId": 2,
+      "id": 30
+    },
+    {
+      "author": "이거",
+      "text": "한글",
+      "updated": "2021-11-29 14:06:45",
+      "postId": 2,
+      "id": 31
     }
   ]
 }

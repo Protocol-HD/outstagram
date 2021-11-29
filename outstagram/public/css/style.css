@@ -3064,6 +3064,7 @@ z .eskimo_commentlist .comment-respond {
 
 .eskimo_comment_text p {
 	font-family: 'Gowun Dodum', sans-serif; 
+	word-wrap: break-word;
 }
 
 .eskimo_cancel {

@@ -39,7 +39,7 @@ function SinglePostComments({ refreash, setRefreash }) {
 													</cite>
 													<div className="eskimo_comment_links">
 														<i className="fa fa-clock-o" id="clock"></i>
-														 {comment.updated} -
+														{comment.updated} -
 														<span > Reply</span>
 													</div>
 													<div className="eskimo_comment_text">

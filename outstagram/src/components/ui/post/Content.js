@@ -50,7 +50,7 @@ function Content({ post, setRefreash }) {
 				<div className="textBox">
 					{post.text.length > 300 ? post.text.substr(0, 300) + "..." : post.text}
 				</div>
-				<div className="moreText">
+				<div className="moreText d-flex justify-content-center">
 					<Link to={`/singlepost${post.id}`}>
 						<button type="button" className="btn btn-primary mt-3">더 보기</button>
 					</Link>
