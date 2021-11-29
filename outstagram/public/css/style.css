@@ -4583,4 +4583,8 @@ p.form-submit {
 	.eskimo-footer-wrapper {
 		padding: 40px 0px;
 	}
+
+	.likeCounter{
+		font-size : 1.0rem;
+	}
 }
