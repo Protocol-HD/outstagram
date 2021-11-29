@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function SliderItem({ post }) {
 	return (
-		<div>
+		<Link to={`/singlepost${post.id}`}>
 			<div className="eskimo-slider-img"></div>
 			<ul className="eskimo-slider-image-meta eskimo-image-meta-post">
 				{
@@ -19,7 +20,7 @@ function SliderItem({ post }) {
 					<p className="card-text">{post.text}</p>
 				</div>
 			</div>
-		</div>
+		</Link>
 
 	);
 }
