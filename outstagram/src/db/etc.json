@@ -19,6 +19,10 @@
     {
       "name": "Party",
       "id": 5
+    },
+    {
+      "name": "sdfsadfs",
+      "id": 6
     }
   ],
   "sns": [
@@ -33,16 +37,10 @@
     {
       "name": "Instagram",
       "id": 3
-    }
-  ],
-  "Sliders": [
-    {
-      "postId": 1,
-      "id": 1
     },
     {
-      "postId": 2,
-      "id": 2
+      "name": "dsfgasd",
+      "id": 4
     }
   ]
 }

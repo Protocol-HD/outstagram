@@ -1,12 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-function Gallery({ titleImage }) {
+function Gallery({ titleImage, postId }) {
 	return (
-		<img
-			src={`./images/${titleImage}`}
-			className="col-12 col-md-6 col-xl-4 img-fluid overviewImg"
-			alt=""
-		/>
+		<Link to={`/singlepost${postId}`} className="col-12 col-md-6 col-xl-4 overviewLink">
+			<img className="overviewImg" src={`./images/${titleImage}`} alt="" />
+		</Link >
 	);
 }
 

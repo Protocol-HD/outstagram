@@ -92,8 +92,11 @@
 }
 
 .overviewImg {
-	padding: 5px;
 	border-radius: 20px;
+}
+
+.overviewLink {
+	padding: 5px;
 }
 
 .likeCountNum {

@@ -202,7 +202,7 @@ function EditPostPage() {
 						}
 					</select>
 
-					<button type="submit" className="btn btn-primary">Submit</button>
+					<button type="submit" className="btn btn-primary">글 수정</button>
 				</form>
 			</div>
 		</div>

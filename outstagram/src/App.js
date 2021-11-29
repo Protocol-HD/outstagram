@@ -10,6 +10,7 @@ import AddPostPage from './components/pages/AddPostPage';
 import EditPostPage from './components/pages/EditPostPage';
 import Sign from './components/pages/Sign';
 import SinglePost from './components/pages/SinglePost';
+import SearchPost from './components/pages/SearchPost';
 
 function App() {
 	return (
@@ -17,6 +18,7 @@ function App() {
 			<Sidebar />
 			<Routes>
 				<Route path="/" element={<Home />} />
+				<Route path="/search:id" element={<SearchPost />} />
 				<Route path="/galleries" element={<Galleries />} />
 				<Route path="/sign" element={<Sign />} />
 				<Route path="/adminpage" element={<AdminPage />} />

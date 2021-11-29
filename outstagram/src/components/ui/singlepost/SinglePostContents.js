@@ -44,8 +44,9 @@ function SinglePostContents({ setTitle }) {
 						}
 					</div>
 				</div>
+
 				<div className="mt-2">
-					by {post.author}
+					by <Link to={`/search${post.author}`}>{post.author}</Link>
 				</div>
 				{/* <p className="mb-0">{post.text}</p> */}
 				<div className="clearfix"></div>

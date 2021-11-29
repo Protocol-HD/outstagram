@@ -1,6 +1,6 @@
 import React from 'react';
-import AddCategories from '../ui/AddCategories';
-import AddSns from '../ui/AddSns';
+import AddCategories from '../ui/admin/AddCategories';
+import AddSns from '../ui/admin/AddSns';
 import PageTitle from '../PageTitle';
 
 function AdminPage() {

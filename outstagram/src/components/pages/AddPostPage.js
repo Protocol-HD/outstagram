@@ -204,7 +204,7 @@ function AddPostPage() {
 						}
 					</select>
 
-					<button type="submit" className="btn btn-primary">Submit</button>
+					<button type="submit" className="btn btn-primary">글 올리기</button>
 				</form>
 			</div>
 		</div>

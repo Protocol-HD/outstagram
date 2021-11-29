@@ -15,8 +15,8 @@ function Galleries() {
 			<PageTitle title="Galleries" />
 			<div className="container">
 				<div className="row">
-					{posts.map(item => (
-						<Gallery key={item.id} titleImage={item.titleImage} />
+					{posts.map(post => (
+						<Gallery key={post.id} postId={post.id} titleImage={post.titleImage} />
 					))}
 				</div>
 			</div>

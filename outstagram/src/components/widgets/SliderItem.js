@@ -1,14 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 
-function SliderItem({ postId }) {
-	const url = `http://localhost:5001/post/${postId}`;
-	const [post, setPost] = useState([]);
-
-	useEffect(() => {
-		axios.get(url).then(Response => setPost(Response.data));
-	}, [url]);
-
+function SliderItem({ post }) {
 	return (
 		<div>
 			<div className="eskimo-slider-img"></div>

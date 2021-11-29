@@ -4,7 +4,7 @@ import SliderOutstagram from "react-slick";
 import SliderItem from './SliderItem';
 
 function Slider() {
-	const url = "http://localhost:5000/Sliders";
+	const url = "http://localhost:5001/post?likeCount_gte=10";
 	const [sliders, setSliders] = useState([]);
 	const settings = {
 		autoplay: true,
@@ -24,10 +24,10 @@ function Slider() {
 		<div className="eskimo-carousel-container">
 			<SliderOutstagram id="eskimo-post-slider" className="eskimo-slider" {...settings} style={{ opacity: 1 }}>
 				{
-					sliders.map(item => (
+					sliders.map(slider => (
 						<SliderItem
-							key={item.id}
-							postId={item.postId}
+							key={slider.id}
+							post={slider}
 						/>
 					))
 				}
