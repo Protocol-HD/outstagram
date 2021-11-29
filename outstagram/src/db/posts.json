@@ -1,12 +1,12 @@
 {
   "post": [
     {
-      "author": "yan",
+      "author": "yan98",
       "postTitle": "고양이",
       "categoryId": [
         {
-          "id": 1,
-          "name": "Cat"
+          "id": 7,
+          "name": "animal"
         }
       ],
       "tags": [
@@ -51,11 +51,11 @@
       "id": 3
     },
     {
-      "author": "yan",
+      "author": "roun01",
       "postTitle": "크리스마스 캐롤<화이트 크리스마사>가사해석",
       "categoryId": [
         {
-          "id": 1,
+          "id": 6,
           "name": "Christmas"
         }
       ],
@@ -101,12 +101,12 @@
       "id": 4
     },
     {
-      "author": "yan",
+      "author": "chis88",
       "postTitle": "크리스마스 진저쿠키 레시피",
       "categoryId": [
         {
-          "id": 1,
-          "name": "Christmas cookies"
+          "id": 6,
+          "name": "Christmass"
         }
       ],
       "tags": [
@@ -138,7 +138,7 @@
           "image": "Coo3.jpg"
         },
         {
-          "id": 2,
+          "id": 3,
           "image": "Coo4.jpg"
         }
       ],
@@ -151,12 +151,12 @@
       "id": 5
     },
     {
-      "author": "yan",
+      "author": "sin00",
       "postTitle": "산타클로스",
       "categoryId": [
         {
-          "id": 1,
-          "name": "Santa Claus"
+          "id": 6,
+          "name": "Christmas"
         }
       ],
       "tags": [
@@ -188,7 +188,7 @@
           "image": "San3.jpg"
         },
         {
-          "id": 2,
+          "id": 3,
           "image": "San4.jpg"
         }
       ],
@@ -197,7 +197,7 @@
       "created": "2021-11-29 1:12:30",
       "updated": "2021-11-29 1:12:30",
       "like": true,
-      "likeCount": 27,
+      "likeCount": 11,
       "id": 6
     }
   ]

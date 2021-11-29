@@ -91,6 +91,11 @@
 	color: red;
 }
 
+.singlePostImg {
+	border-radius: 20px;
+	padding: 5px;
+}
+
 .overviewImg {
 	border-radius: 20px;
 }

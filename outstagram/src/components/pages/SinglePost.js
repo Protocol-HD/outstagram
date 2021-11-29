@@ -7,19 +7,18 @@ import SinglePostContents from '../ui/singlepost/SinglePostContents';
 function SinglePost() {
 	const [refreash, setRefreash] = useState(false);
 	const [title, setTitle] = useState("");
-	const [marks, setMarks] = useState("");
 	return (
 		<>
 			<div id="eskimo-site-wrapper">
 				<PageTitle title={title} />
-				
+
 				<main id="eskimo-main-container">
 					<div className="container">
-						<SinglePostContents setTitle={setTitle} setMarks={setMarks} />
+						<SinglePostContents setTitle={setTitle} />
 						<SinglePostComments refreash={refreash} setRefreash={setRefreash} />
 						<SinglePostCommentWrite setRefreash={setRefreash} />
 					</div>
-				</main>	
+				</main>
 			</div>
 		</>
 	);
