@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router';
 
-function SinglePostContents({ setTitle }) {
+function SinglePostContents({ setTitle, setMarks }) {
 	const params = useParams();
 	const url = `http://localhost:5001/post/${params.id}`;
 	const navigate = useNavigate();
@@ -13,8 +13,9 @@ function SinglePostContents({ setTitle }) {
 		axios.get(url).then(Response => {
 			setPost(Response.data);
 			setTitle(Response.data.postTitle);
+			setMarks(Response.data.likeCount);
 		});
-	}, [url, setTitle]);
+	}, [url, setTitle ]);
 
 	const delPost = () => {
 		if (window.confirm("정말 삭제하시겠습니까?")) {
@@ -24,6 +25,7 @@ function SinglePostContents({ setTitle }) {
 
 	return (
 		<>
+			<div className="likeCounter"><i class="fa fa-heart" id="thumsUpFav"></i>{`${post.likeCount}`} Likes</div>
 			<div className="clearfix"></div>
 			<div className="eskimo-featured-img">
 				<img src={`./images/${post.titleImage}`} alt="" />

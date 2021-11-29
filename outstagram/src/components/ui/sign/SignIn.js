@@ -44,7 +44,7 @@ function SignIn() {
 					</label>
 				</div>
 				<div className="mb-2 signErrMsg">{errMsg}</div>
-				<button className="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+				<button className="w-100 btn btn-lg btn-primary" id="SignInButton" type="submit">Sign in</button>
 				<p className="mt-5 mb-3 text-muted">로그인</p>
 			</form>
 		</div>

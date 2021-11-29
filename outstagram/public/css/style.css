@@ -235,6 +235,26 @@ dd {
 	margin-bottom: 1rem;
 }
 
+.likeCounter{
+	font-family: 'Gowun Dodum', sans-serif;
+	font-weight: bold;
+	font-size : 1.5rem;
+	padding : 1px 3px 1px 3px;
+	padding-right : 10px;
+	background-color: #333;
+	color: white;
+	height : auto;
+	text-align: right;
+	margin-bottom : 0.5rem;
+	border-radius: 10px;
+	float : right;
+}
+
+#thumsUpFav{
+	margin-left : 0.5rem;
+	margin-right : 0.5rem;
+}
+
 
 table {
 	margin: 2rem 0;
