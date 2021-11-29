@@ -5,7 +5,7 @@ import FooterWidget2 from './FooterWidget2';
 function FooterWrapper() {
 	return (
 		<div className="row eskimo-footer-wrapper">
-			<FooterWidget1 />
+			{/* <FooterWidget1 /> */}
 			<FooterWidget2 />
 		</div>
 	);
