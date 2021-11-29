@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router';
 
-function SinglePostContents({ setTitle, setMarks }) {
+function SinglePostContents({ setTitle }) {
 	const params = useParams();
 	const url = `http://localhost:5001/post/${params.id}`;
 	const navigate = useNavigate();
@@ -13,9 +13,8 @@ function SinglePostContents({ setTitle, setMarks }) {
 		axios.get(url).then(Response => {
 			setPost(Response.data);
 			setTitle(Response.data.postTitle);
-			setMarks(Response.data.likeCount);
 		});
-	}, [url, setTitle ]);
+	}, [url, setTitle]);
 
 	const delPost = () => {
 		if (window.confirm("정말 삭제하시겠습니까?")) {
@@ -25,7 +24,7 @@ function SinglePostContents({ setTitle, setMarks }) {
 
 	return (
 		<>
-			<div className="likeCounter"><i class="fa fa-heart" id="thumsUpFav"></i>{`${post.likeCount}`} Likes</div>
+			<div className="likeCounter"><i className="fa fa-heart" id="thumsUpFav"></i>{`${post.likeCount}`} Likes</div>
 			<div className="clearfix"></div>
 			<div className="eskimo-featured-img">
 				<img src={`./images/${post.titleImage}`} alt="" />
@@ -38,7 +37,7 @@ function SinglePostContents({ setTitle, setMarks }) {
 							post.images && post.images.map(image => (
 								<img
 									key={image.id}
-									className=" col-12 col-md-6 col-xl-4 img-fluid overviewImg"
+									className=" col-12 col-md-6 col-xl-4 img-fluid singlePostImg"
 									src={`./images/${image.image}`}
 									alt=""
 								/>
