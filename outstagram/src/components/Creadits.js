@@ -4,7 +4,7 @@ function Creadits() {
 	return (
 		<div className="eskimo-footer-credits">
 			<p>
-				Made with love by Egemenerd
+				Made by FourMan
 			</p>
 		</div>
 	);

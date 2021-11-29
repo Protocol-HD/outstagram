@@ -245,7 +245,7 @@ dd {
 	color: white;
 	height : auto;
 	text-align: right;
-	margin-bottom : 0.5rem;
+	margin-bottom : 0.8rem;
 	border-radius: 10px;
 	float : right;
 }
@@ -253,6 +253,30 @@ dd {
 #thumsUpFav{
 	margin-left : 0.5rem;
 	margin-right : 0.5rem;
+}
+
+#gitHubFav{
+	font-size : 8rem;
+	padding : 10px;
+	color : #51cbce;
+	display : inline-block;
+}
+
+.gitHubLogo{
+	width : 100%;
+	text-align: center;
+}
+
+.gitHubAdr{
+	width : 100%;
+	text-align: center;
+	font-family: 'Gowun Dodum', sans-serif;
+	font-size : 1.3rem;
+	font-weight : bold;
+}
+
+.likeCountNum{
+	margin-top : 0.1rem;
 }
 
 
@@ -4384,6 +4408,10 @@ p.form-submit {
 	.eskimo-slider {
 		margin-bottom: 60px
 	}
+
+	.likeCounter{
+		font-size : 1.8rem;
+	}
 }
 
 
@@ -4403,6 +4431,9 @@ p.form-submit {
 	hr.section-divider {
 		margin-top: 60px;
 		margin-bottom: 60px
+	}
+	.likeCounter{
+		font-size : 1.3rem;
 	}
 }
 
