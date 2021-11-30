@@ -7,7 +7,7 @@ function AdminPage() {
 	return (
 		<div id="eskimo-site-wrapper">
 			<PageTitle title = "Admin Page" />
-			<div className="inputBox text-center">
+			<div className="inputGroupBox text-center">
 				<AddSns />
 				<AddCategories />
 			</div>

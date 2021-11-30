@@ -4,14 +4,16 @@ import CommentWrite from './CommentWrite';
 import Content from './Content';
 import axios from 'axios';
 
-function Post() {
-	const url = `http://localhost:5001/post`;
+function Post({ more }) {
+	const url = `http://localhost:5001/post?_end=`;
 	const [posts, setPosts] = useState([]);
 	const [refreash, setRefreash] = useState(false);
 
 	useEffect(() => {
-		axios.get(url).then(Response => setPosts(Response.data.reverse())).then(setRefreash(false));
-	}, [url, refreash, setRefreash]);
+		axios.get(url + more).then(Response => setPosts(Response.data)).then(setRefreash(false));
+	}, [url, refreash, setRefreash, more]);
+
+
 	return (
 		posts.map(post => {
 			return (

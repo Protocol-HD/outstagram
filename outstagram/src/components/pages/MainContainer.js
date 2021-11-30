@@ -7,6 +7,8 @@ import Post from '../ui/post/Post';
 
 function MainContainer() {
 	const [search, setSearch] = useState(false);
+	const [more, setMore] = useState(2);
+
 	return (
 		<>
 			<div id="eskimo-site-wrapper">
@@ -15,7 +17,10 @@ function MainContainer() {
 					<div className="container">
 						{/* <TopIcons setSearch={setSearch} /> */}
 						<Slider />
-						<Post />
+						<Post more={more} />
+					</div>
+					<div className="d-flex justify-content-center">
+						<button onClick={() => setMore(more + 2)} type="button" class="btn btn-primary">더 불러오기</button>
 					</div>
 				</main>
 			</div>

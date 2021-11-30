@@ -114,28 +114,38 @@ function AddPostPage() {
 			categoryId: category
 		}).then(navigate("/"));
 	}
+
+	const handleImgError = (e) => {
+		e.target.src = "";
+	}
+
 	return (
 		<div id="eskimo-site-wrapper">
 			<PageTitle title="Add Post" />
-			<div className="inputBox text-center">
-				<figure>
-					<blockquote className="blockquote text-center">
-						<p>Post 추가</p>
-					</blockquote>
-					<figcaption className="blockquote-footer">
-						필수 작성란) 작성자, 제목, 메인사진, 글내용
-					</figcaption>
-				</figure>
+			<div className="inputGroupBox">
+				<div className="text-center">
+					<figure>
+						<div className="blockquote">
+							<b>글 작성</b>
+						</div>
+						<figcaption className="blockquote-footer">
+							필수 작성란) 작성자, 제목, 메인사진, 글내용
+						</figcaption>
+					</figure>
+				</div>
 
 				<form onSubmit={onSubmit}>
-					<div className="input-group mb-2 inputBox">
+					<label class="inputLabel">작성자*</label>
+					<div className="input-group">
 						<input type="text" className="form-control" placeholder="Author" onChange={handleSubmit} name="author" required />
 					</div>
 
-					<div className="input-group mb-2 inputBox">
+					<label class="inputLabel">제목*</label>
+					<div className="input-group">
 						<input type="text" className="form-control" placeholder="Post Title" onChange={handleSubmit} name="postTitle" required />
 					</div>
 
+					<label class="inputLabel">카테고리</label>
 					<div className="eskimo-meta-tags mt-0">
 						{
 							category.map(item => (
@@ -146,7 +156,7 @@ function AddPostPage() {
 							))
 						}
 					</div>
-					<select className="form-select mb-2 p-2 col-12" name="categoryId" onChange={addCategory}>
+					<select className="form-select p-2 col-12" name="categoryId" onChange={addCategory}>
 						<option defaultValue>Select Category</option>
 						{
 							categories.map(category => (<option key={category.id} value={category.name}>
@@ -155,9 +165,7 @@ function AddPostPage() {
 						}
 					</select>
 
-					<figcaption className="blockquote-footer">
-						쉼표( , )로 구분
-					</figcaption>
+					<label class="inputLabel">태그 - 쉼표( , )로 구분</label>
 					<div className="eskimo-meta-tags mt-0">
 						{
 							tag.map(item => (
@@ -168,17 +176,26 @@ function AddPostPage() {
 							))
 						}
 					</div>
-					<div className="input-group mb-2 inputBox">
+					<div className="input-group">
 						<input type="text" className="form-control" placeholder="Tags" onChange={addTag} name="tags" />
 					</div>
 
-					<div className="input-group mb-2 inputBox">
+					<label class="inputLabel">메인사진*</label>
+					<img src={`./images/${newPost.titleImage}`} className="overviewImg" onError={handleImgError} />
+					<div className="input-group">
 						<input type="text" className="form-control" placeholder="Title Image" onChange={handleSubmit} name="titleImage" required />
 					</div>
 
-					<figcaption className="blockquote-footer">
-						쉼표( , )로 구분
-					</figcaption>
+					<label class="inputLabel">추가사진 - 쉼표( , )로 구분</label>
+					<div className="container">
+						<div className="row">
+							{
+								image.map(item => (
+									<img className="col-6 col-md-4 img-fluid singlePostImg" src={`./images/${item.image}`} alt="" />
+								))
+							}
+						</div>
+					</div>
 					<div className="eskimo-meta-tags mt-0">
 						{
 							image.map(item => (
@@ -189,21 +206,25 @@ function AddPostPage() {
 							))
 						}
 					</div>
-					<div className="input-group mb-2 inputBox">
+					<div className="input-group">
 						<input type="text" className="form-control" placeholder="Images" onChange={addImage} name="images" />
 					</div>
 
-					<div className="input-group mb-2 inputBox">
+					<label class="inputLabel">글 내용*</label>
+					<div className="input-group">
 						<textarea type="text" className="form-control text-box" placeholder="Text" onChange={handleSubmit} name="text" required />
 					</div>
 
-					<select className="form-select mb-2 p-2 col-12" onChange={handleSubmit} name="snsList">
+					<label class="inputLabel">SNS</label>
+					<select className="form-select p-2 col-12" onChange={handleSubmit} name="snsList">
 						<option defaultValue>Select SNS</option>
 						{
 							snsList.map(sns => (<option key={sns.id} value={sns.id}>{sns.name}</option>))
 						}
 					</select>
-					<button type="submit" className="btn btn-primary">글 올리기</button>
+					<div className="text-center">
+						<button type="submit" className="btn btn-primary my-2">글 올리기</button>
+					</div>
 				</form>
 			</div>
 		</div>

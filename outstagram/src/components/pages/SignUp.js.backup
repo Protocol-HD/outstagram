@@ -139,10 +139,10 @@ function SignUp() {
 							</div>
 						</figcaption>
 					</figure>
-					<div className="input-group mb-1 inputBox">
+					<div className="input-group mb-1">
 						<input type="password" className="form-control" placeholder="비밀번호를 8자리 이상 입력하세요." aria-label="User Password" aria-describedby="button-addon2" ref={refPw} onChange={checkPwErr} />
 					</div>
-					<div className="input-group mb-3 inputBox">
+					<div className="input-group mb-3">
 						<input type="password" className="form-control" placeholder="비밀번호 확인" aria-label="User Password" aria-describedby="button-addon2" ref={refPw2} onChange={checkPwErr} />
 					</div>
 					<button type="submit" className="btn btn-primary">가입하기</button>

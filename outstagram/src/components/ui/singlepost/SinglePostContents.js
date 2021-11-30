@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router';
+// import Sns from './Sns';
 
 function SinglePostContents({ setTitle }) {
 	const params = useParams();
@@ -64,6 +65,7 @@ function SinglePostContents({ setTitle }) {
 						<button type="button" className="btn btn-secondary mt-3" onClick={delPost}>Del</button>
 					</div>
 				</div>
+				{/* <Sns /> */}
 
 				{/* <div className="eskimo-post-nav-wrapper">
 					<div className="eskimo-post-nav-left-row">

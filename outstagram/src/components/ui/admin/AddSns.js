@@ -20,7 +20,7 @@ function AddSns() {
 			</figure>
 
 			<form onSubmit={handelSubmit}>
-				<div className="input-group mb-3 inputBox">
+				<div className="input-group mb-3">
 					<input type="text" className="form-control" placeholder="Recipient's username" ref={refSns} required />
 				</div>
 				<button type="submit" className="btn btn-primary">추가하기</button>

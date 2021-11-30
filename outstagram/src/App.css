@@ -6,13 +6,13 @@
 	transition: 0.3s;
 }
 
-.inputBox {
+.inputGroupBox {
 	max-width: 800px;
 	margin: auto;
 }
 
 .text-box {
-	height: 300px;
+	height: 200px;
 }
 
 .textCenter {
@@ -50,11 +50,6 @@
 
 .pointer {
 	cursor: pointer;
-}
-
-.inputBox {
-	border-right: 1px solid rgba(0, 0, 0, 0.1);
-	border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .delButton {
@@ -114,4 +109,13 @@
 
 .bold {
 	font-weight: bold;
+}
+
+.inputLabel {
+	font-size: 0.9rem;
+	color: #888;
+}
+
+.inputImages {
+	padding: auto;
 }
