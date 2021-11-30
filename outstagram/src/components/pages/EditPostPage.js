@@ -120,16 +120,7 @@ function EditPostPage() {
 		<div id="eskimo-site-wrapper">
 			<PageTitle title="Edit Post" />
 			<div className="inputGroupBox">
-				<div className="text-center">
-					<figure>
-						<div className="blockquote">
-							<b>글 수정</b>
-						</div>
-						<figcaption className="blockquote-footer">
-							필수 작성란) 작성자, 제목, 메인사진, 글내용
-						</figcaption>
-					</figure>
-				</div>
+				<h5 className="eskimo-title-with-border"><span>글 수정</span></h5>
 
 				<form onSubmit={onSubmit}>
 					<label class="inputLabel">작성자*</label>
@@ -204,7 +195,7 @@ function EditPostPage() {
 						}
 					</div>
 					<div className="input-group">
-						<input type="text" className="form-control" placeholder="Image1s" onChange={addImage} name="images" />
+						<input type="text" className="form-control" placeholder="Images" onChange={addImage} name="images" />
 					</div>
 
 					<label class="inputLabel">글 내용*</label>

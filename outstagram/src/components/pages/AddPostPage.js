@@ -123,16 +123,7 @@ function AddPostPage() {
 		<div id="eskimo-site-wrapper">
 			<PageTitle title="Add Post" />
 			<div className="inputGroupBox">
-				<div className="text-center">
-					<figure>
-						<div className="blockquote">
-							<b>글 작성</b>
-						</div>
-						<figcaption className="blockquote-footer">
-							필수 작성란) 작성자, 제목, 메인사진, 글내용
-						</figcaption>
-					</figure>
-				</div>
+						<h5 className="eskimo-title-with-border"><span>글작성</span></h5>
 
 				<form onSubmit={onSubmit}>
 					<label class="inputLabel">작성자*</label>
