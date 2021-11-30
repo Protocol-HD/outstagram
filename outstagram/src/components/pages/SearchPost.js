@@ -18,7 +18,7 @@ function SearchPost() {
 
 	return (
 		<div id="eskimo-site-wrapper">
-			<PageTitle title={"Search" + params.id} />
+			<PageTitle title={"Search: " + params.id} />
 			<main id="eskimo-main-container">
 				<div className="container">
 					{
