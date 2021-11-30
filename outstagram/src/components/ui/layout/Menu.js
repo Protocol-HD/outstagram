@@ -9,6 +9,7 @@ function Menu({ mobileMenu }) {
 				<li><Link to={"/"}>Home</Link></li>
 				<li><Link to={"/addpost"}>Add Post</Link></li>
 				<li><Link to={"/galleries"}>Galleries</Link></li>
+				<li><Link to={"/about"}>About</Link></li>
 				{/* <li><Link to={"/adminpage"}>Admin Page</Link></li> */}
 			</ul>
 		</nav>

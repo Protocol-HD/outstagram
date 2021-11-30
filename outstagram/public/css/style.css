@@ -279,6 +279,100 @@ dd {
 	margin-top : 0.1rem;
 }
 
+.AboutContainer{
+	margin-left : 50px;
+	margin-right : 50px;
+	font-family: 'Gowun Dodum', sans-serif;
+}
+
+.AboutContainer p{
+	font-size: 1.5rem;
+}
+
+.AboutContainer h3{
+	padding : 10px;
+	background-color: #333;
+	color : white;
+	width : 25%;
+	margin : auto;
+	margin-bottom: 100px;
+	margin-top : 100px;
+
+}
+
+.Members{
+	display: flex;
+	margin-top : 0px;
+}
+
+.Members .col{
+	margin-top : 0px;
+}
+
+.Members div {
+	background-color: rgb(255, 255, 255);
+	text-align: left;
+	padding : 70px 70px;
+	font-size: 2rem;
+	font-weight: bolder;
+	transition: 0.5s;
+	margin-top : 50px;
+}
+
+.Members div:hover {
+	background-color: #51cbce;
+	color : white;
+	text-align: left;
+	padding : 70px 70px;
+	font-size: 2rem;
+	font-weight: bolder;
+	transition: 0.5s;
+}
+
+.AboutCtsBox2 {
+	margin-top : 3rem;
+	margin-bottom: 100px;
+	text-align: left;
+	padding : 50px 50px;
+	border: #51cbce;
+	background-color: #ffffff;
+	border-width: 0.12rem;
+	border-style: solid;
+}
+
+.AboutCtsBox2 .Title{
+	font-size: 2rem;
+	font-weight: bolder;
+}
+
+.AboutCtsBox2 .Details{
+	line-height: 0px;
+	font-size: 1rem;
+	font-weight: bolder;
+}
+
+.AboutCtsBox1 {
+	margin-top : 3rem;
+	margin-bottom: 100px;
+	padding-top : 150px;
+	text-align: center;
+	border: #51cbce;
+	background-color: #ffffff;
+	border-width: 0.12rem;
+	border-style: solid;
+}
+
+.AboutCtsBox1 p{
+	font-size : 2.0rem;
+	font-weight: bolder;
+}
+
+.AboutCtsBox1 .row{
+	width : 100%;
+	margin : auto;
+}
+
+
 
 table {
 	margin: 2rem 0;
@@ -4463,6 +4557,9 @@ p.form-submit {
 		padding: 0px;
 	}
 
+	.Members{
+		font-size : 0.3rem;
+	}
 	.eskimo-post-nav-link {
 		display: none;
 	}
