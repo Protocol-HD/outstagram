@@ -11,6 +11,7 @@ import EditPostPage from './components/pages/EditPostPage';
 import Sign from './components/pages/Sign';
 import SinglePost from './components/pages/SinglePost';
 import SearchPost from './components/pages/SearchPost';
+import About from './components/pages/About';
 
 function App() {
 	return (
@@ -25,6 +26,7 @@ function App() {
 				<Route path="/addpost" element={<AddPostPage />} />
 				<Route path="/editpost:id" element={<EditPostPage />} />
 				<Route path="/singlepost:id" element={<SinglePost />} />
+				<Route path="/about" element={<About/>}/>
 			</Routes>
 			<GoToTopButton />
 			<Footer />
