@@ -20,6 +20,9 @@ function Slider() {
 	useEffect(() => {
 		axios.get(url).then(Response => setSliders(Response.data));
 	}, [url])
+	if (sliders.length < 2) {
+		return null;
+	}
 	return (
 		<div className="eskimo-carousel-container">
 			<SliderOutstagram id="eskimo-post-slider" className="eskimo-slider" {...settings} style={{ opacity: 1 }}>

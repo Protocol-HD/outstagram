@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useRef, useState } from 'react';
-import PageTitle from '../PageTitle';
+import PageTitle from '../widgets/PageTitle';
 import style from './SignUp.module.css'
 
 function SignUp() {

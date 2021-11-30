@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import PageTitle from './PageTitle';
-import Slider from './widgets/Slider';
+import PageTitle from '../widgets/PageTitle';
+import Slider from '../widgets/Slider';
 // import TopIcons from './widgets/TopIcons';
-import FullscreenSearch from './FullscreenSearch'
-import Post from './pages/Post';
+import FullscreenSearch from '../FullscreenSearch'
+import Post from '../ui/post/Post';
 
 function MainContainer() {
 	const [search, setSearch] = useState(false);

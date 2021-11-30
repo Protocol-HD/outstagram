@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import PageTitle from '../PageTitle';
+import PageTitle from '../widgets/PageTitle';
 import { useParams } from "react-router";
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
@@ -115,7 +115,7 @@ function EditPostPage() {
 	return (
 		<div id="eskimo-site-wrapper">
 			<PageTitle title="Edit Post" />
-			<div className="testBox  text-center">
+			<div className="inputBox  text-center">
 				<figure className="text-center">
 					<blockquote className="blockquote">
 						<p>Post 수정</p>

@@ -1,6 +1,6 @@
 import React from 'react';
-import Creadits from './Creadits';
-import FooterWrapper from './FooterWrapper';
+import Creadits from '../ui/layout/Creadits';
+import FooterWrapper from '../ui/layout/FooterWrapper';
 
 function Footer() {
 	return (

@@ -4,7 +4,7 @@ import CommentWrite from '../ui/post/CommentWrite';
 import Content from '../ui/post/Content';
 import axios from 'axios';
 import { useParams } from "react-router";
-import PageTitle from '../PageTitle';
+import PageTitle from '../widgets/PageTitle';
 
 function SearchPost() {
 	const params = useParams();

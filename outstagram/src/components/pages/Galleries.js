@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import PageTitle from '../PageTitle';
+import PageTitle from '../widgets/PageTitle';
 import Gallery from '../widgets/Gallery';
 
 function Galleries() {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import PageTitle from '../PageTitle';
+import PageTitle from '../widgets/PageTitle';
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
 
@@ -60,7 +60,7 @@ function AddPostPage() {
 			setImageKey(imageKey + 1);
 		}
 	}
-	
+
 	const addTag = (e) => {
 		if (e.target.value[e.target.value.length - 1] === ",") {
 			setTag([
@@ -117,13 +117,13 @@ function AddPostPage() {
 	return (
 		<div id="eskimo-site-wrapper">
 			<PageTitle title="Add Post" />
-			<div className="testBox text-center">
+			<div className="inputBox text-center">
 				<figure>
-					<blockquote className="blockquote">
+					<blockquote className="blockquote text-center">
 						<p>Post 추가</p>
 					</blockquote>
 					<figcaption className="blockquote-footer">
-						필수 작성란) <cite>작성자, 제목, 메인사진, 글내용</cite>
+						필수 작성란) 작성자, 제목, 메인사진, 글내용
 					</figcaption>
 				</figure>
 
@@ -156,7 +156,7 @@ function AddPostPage() {
 					</select>
 
 					<figcaption className="blockquote-footer">
-						<cite>쉼표( , )로 구분</cite>
+						쉼표( , )로 구분
 					</figcaption>
 					<div className="eskimo-meta-tags mt-0">
 						{
@@ -177,7 +177,7 @@ function AddPostPage() {
 					</div>
 
 					<figcaption className="blockquote-footer">
-						<cite>쉼표( , )로 구분</cite>
+						쉼표( , )로 구분
 					</figcaption>
 					<div className="eskimo-meta-tags mt-0">
 						{
@@ -203,7 +203,6 @@ function AddPostPage() {
 							snsList.map(sns => (<option key={sns.id} value={sns.id}>{sns.name}</option>))
 						}
 					</select>
-
 					<button type="submit" className="btn btn-primary">글 올리기</button>
 				</form>
 			</div>

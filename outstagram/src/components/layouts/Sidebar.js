@@ -1,7 +1,7 @@
 import React from 'react';
-import Logo from './Logo';
-import MenuContainer from './MenuContainer';
-import SocialMediaIcon from './SocialMediaIcon';
+import Logo from '../ui/layout/Logo';
+import MenuContainer from '../ui/layout/MenuContainer';
+import SocialMediaIcon from '../ui/layout/SocialMediaIcon';
 
 function Sidebar() {
 	return (

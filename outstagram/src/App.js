@@ -1,8 +1,8 @@
 import './App.css';
 import Home from './components/pages/Home';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Sidebar from './components/Sidebar';
-import Footer from './components/Footer';
+import Sidebar from './components/layouts/Sidebar';
+import Footer from './components/layouts/Footer';
 import Galleries from './components/pages/Galleries';
 import GoToTopButton from './components/widgets/GoToTopButton';
 import AdminPage from './components/pages/AdminPage';

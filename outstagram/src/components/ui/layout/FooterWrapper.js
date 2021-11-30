@@ -1,5 +1,5 @@
 import React from 'react';
-import FooterWidget1 from './FooterWidget1';
+// import FooterWidget1 from './FooterWidget1';
 import FooterWidget2 from './FooterWidget2';
 
 function FooterWrapper() {

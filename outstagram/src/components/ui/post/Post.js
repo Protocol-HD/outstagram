@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import Comments from '../ui/post/Comments';
-import CommentWrite from '../ui/post/CommentWrite';
-import Content from '../ui/post/Content';
+import Comments from './Comments';
+import CommentWrite from './CommentWrite';
+import Content from './Content';
 import axios from 'axios';
 
 function Post() {

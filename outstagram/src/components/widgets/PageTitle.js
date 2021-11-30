@@ -12,6 +12,7 @@ function PageTitle({ title }) {
 	}, [url])
 
 	const handleView = () => {
+		
 		if (params.id > 0) {
 			return (<>
 				<div className="eskimo-page-title-meta">

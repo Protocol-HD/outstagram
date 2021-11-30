@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PageTitle from '../PageTitle';
+import PageTitle from '../widgets/PageTitle';
 import SinglePostComments from '../ui/singlepost/SinglePostComments';
 import SinglePostCommentWrite from '../ui/singlepost/SinglePostCommentWrite';
 import SinglePostContents from '../ui/singlepost/SinglePostContents';

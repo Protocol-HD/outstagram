@@ -1,7 +1,7 @@
 import React from 'react';
 import SignIn from '../ui/sign/SignIn';
 import SignUp from '../ui/sign/SignUp';
-import PageTitle from '../PageTitle';
+import PageTitle from '../widgets/PageTitle';
 
 function Sign() {
 	return (
