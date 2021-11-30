@@ -100,8 +100,8 @@
       "snsList": "3",
       "created": "2021-11-29 12:1:00",
       "updated": "2021-11-30 12:04:53",
-      "like": false,
-      "likeCount": 0,
+      "like": true,
+      "likeCount": 5,
       "id": 4
     },
     {

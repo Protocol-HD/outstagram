@@ -329,6 +329,11 @@ dd {
 	transition: 0.5s;
 }
 
+.AboutCtsBox2 .eskimo-title-with-border{
+	font-size: 2.0rem;
+	margin-bottom: 30px;
+}
+
 .AboutCtsBox2 {
 	margin-top : 3rem;
 	margin-bottom: 100px;
